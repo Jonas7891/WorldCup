@@ -1,0 +1,304 @@
+{
+  "version": "2.0.0",
+  "darkMode": true,
+  "gridEnabling": false,
+  "currentViewName": null,
+  "defaultView": {
+    "detailLevel": "All",
+    "tablePositions": [
+      {
+        "name": "groups",
+        "schemaName": "public",
+        "x": 12,
+        "y": 12
+      },
+      {
+        "name": "teams",
+        "schemaName": "public",
+        "x": 500,
+        "y": 12
+      },
+      {
+        "name": "players",
+        "schemaName": "public",
+        "x": 1062,
+        "y": 12
+      },
+      {
+        "name": "coaches",
+        "schemaName": "public",
+        "x": 1062,
+        "y": 218
+      },
+      {
+        "name": "stadiums",
+        "schemaName": "public",
+        "x": 12,
+        "y": 218
+      },
+      {
+        "name": "matches",
+        "schemaName": "public",
+        "x": 500,
+        "y": 218
+      },
+      {
+        "name": "goals",
+        "schemaName": "public",
+        "x": 1570.5,
+        "y": 12
+      },
+      {
+        "name": "cards",
+        "schemaName": "public",
+        "x": 1570.5,
+        "y": 218
+      },
+      {
+        "name": "referees",
+        "schemaName": "public",
+        "x": 12,
+        "y": 424
+      },
+      {
+        "name": "awards",
+        "schemaName": "public",
+        "x": 12,
+        "y": 630
+      },
+      {
+        "name": "match_team",
+        "schemaName": "public",
+        "x": 1062,
+        "y": 424
+      },
+      {
+        "name": "match_referee",
+        "schemaName": "public",
+        "x": 1062,
+        "y": 631
+      },
+      {
+        "name": "player_award",
+        "schemaName": "public",
+        "x": 1570.5,
+        "y": 424
+      }
+    ],
+    "tableGroupCollapseStates": [],
+    "stickyNoteLayouts": [],
+    "referencePaths": [
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "groups",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "group_id"
+        ],
+        "secondTableName": "teams",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "teams",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "team_id"
+        ],
+        "secondTableName": "players",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "teams",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "team_id"
+        ],
+        "secondTableName": "coaches",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "stadiums",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "stadium_id"
+        ],
+        "secondTableName": "matches",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "players",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "player_id"
+        ],
+        "secondTableName": "goals",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "matches",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "match_id"
+        ],
+        "secondTableName": "goals",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "players",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "player_id"
+        ],
+        "secondTableName": "cards",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "matches",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "match_id"
+        ],
+        "secondTableName": "cards",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "matches",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "match_id"
+        ],
+        "secondTableName": "match_team",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "teams",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "team_id"
+        ],
+        "secondTableName": "match_team",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "matches",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "match_id"
+        ],
+        "secondTableName": "match_referee",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "referees",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "referee_id"
+        ],
+        "secondTableName": "match_referee",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "players",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "player_id"
+        ],
+        "secondTableName": "player_award",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "id"
+        ],
+        "firstTableName": "awards",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "award_id"
+        ],
+        "secondTableName": "player_award",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      }
+    ]
+  },
+  "views": {}
+}

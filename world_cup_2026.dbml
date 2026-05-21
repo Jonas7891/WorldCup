@@ -11,7 +11,7 @@ Table groups {
   id              int         [pk, increment]
   name            varchar     [not null, unique]
   stage           varchar     [not null]
-  qualified_slots int         [not null, default: 2]
+  qualified_slots int         [not null]
 }
 
 Table teams {
@@ -74,7 +74,7 @@ Table awards {
   id              int         [pk, increment]
   name            varchar     [not null, unique]
   category        varchar     [not null]
-  edition         varchar     [not null, default: 'WC2026']
+  edition         varchar     [not null]
 }
 
 // ──────────────────────────────────────────
@@ -84,8 +84,8 @@ Table awards {
 Table match_team {
   match_id        int         [ref: > matches.id]
   team_id         int         [ref: > teams.id]
-  is_home         boolean     [not null, default: false]
-  score           int         [default: 0]
+  is_home         boolean     [not null]
+  score           int         [not null]
 
   indexes {
     (match_id, team_id) [pk]
@@ -95,7 +95,7 @@ Table match_team {
 Table match_referee {
   match_id        int         [ref: > matches.id]
   referee_id      int         [ref: > referees.id]
-  assigned_at     timestamp   [default: `now()`]
+  assigned_at     timestamp   [not null]
   role            varchar     [not null]
 
   indexes {
@@ -106,7 +106,7 @@ Table match_referee {
 Table player_award {
   player_id       int         [ref: > players.id]
   award_id        int         [ref: > awards.id]
-  given_at        timestamp   [default: `now()`]
+  given_at        timestamp   [not null]
   ceremony        varchar     [not null]
 
   indexes {
