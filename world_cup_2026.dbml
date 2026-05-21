@@ -1,0 +1,115 @@
+// ══════════════════════════════════════════════════════
+// FIFA World Cup 2026 — Database Schema
+// snake_case · 4 columns per table · dbdiagram.io ready
+// ══════════════════════════════════════════════════════
+
+// ──────────────────────────────────────────
+// CORE ENTITIES
+// ──────────────────────────────────────────
+
+Table groups {
+  id              int         [pk, increment]
+  name            varchar     [not null, unique]
+  stage           varchar     [not null]
+  qualified_slots int         [not null, default: 2]
+}
+
+Table teams {
+  id              int         [pk, increment]
+  name            varchar     [not null, unique]
+  country_code    varchar(3)  [not null, unique]
+  group_id        int         [ref: > groups.id]
+}
+
+Table players {
+  id              int         [pk, increment]
+  full_name       varchar     [not null]
+  team_id         int         [ref: > teams.id]
+  position        varchar     [not null]
+}
+
+Table coaches {
+  id              int         [pk, increment]
+  full_name       varchar     [not null]
+  team_id         int         [ref: > teams.id, unique]
+  nationality     varchar     [not null]
+}
+
+Table stadiums {
+  id              int         [pk, increment]
+  name            varchar     [not null]
+  city            varchar     [not null]
+  capacity        int         [not null]
+}
+
+Table matches {
+  id              int         [pk, increment]
+  stadium_id      int         [ref: > stadiums.id]
+  played_at       timestamp   [not null]
+  stage           varchar     [not null]
+}
+
+Table goals {
+  id              int         [pk, increment]
+  player_id       int         [ref: > players.id]
+  match_id        int         [ref: > matches.id]
+  minute          int         [not null]
+}
+
+Table cards {
+  id              int         [pk, increment]
+  player_id       int         [ref: > players.id]
+  match_id        int         [ref: > matches.id]
+  card_type       varchar     [not null]
+}
+
+Table referees {
+  id              int         [pk, increment]
+  full_name       varchar     [not null]
+  nationality     varchar     [not null]
+  badge_level     varchar     [not null]
+}
+
+Table awards {
+  id              int         [pk, increment]
+  name            varchar     [not null, unique]
+  category        varchar     [not null]
+  edition         varchar     [not null, default: 'WC2026']
+}
+
+// ──────────────────────────────────────────
+// PIVOT TABLES
+// ──────────────────────────────────────────
+
+Table match_team {
+  match_id        int         [ref: > matches.id]
+  team_id         int         [ref: > teams.id]
+  is_home         boolean     [not null, default: false]
+  score           int         [default: 0]
+
+  indexes {
+    (match_id, team_id) [pk]
+  }
+}
+
+Table match_referee {
+  match_id        int         [ref: > matches.id]
+  referee_id      int         [ref: > referees.id]
+  assigned_at     timestamp   [default: `now()`]
+  role            varchar     [not null]
+
+  indexes {
+    (match_id, referee_id) [pk]
+  }
+}
+
+Table player_award {
+  player_id       int         [ref: > players.id]
+  award_id        int         [ref: > awards.id]
+  given_at        timestamp   [default: `now()`]
+  ceremony        varchar     [not null]
+
+  indexes {
+    (player_id, award_id) [pk]
+  }
+}
