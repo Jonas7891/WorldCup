@@ -1,115 +1,155 @@
-// ══════════════════════════════════════════════════════
-// FIFA World Cup 2026 — Database Schema
-// snake_case · 4 columns per table · dbdiagram.io ready
-// ══════════════════════════════════════════════════════
-
-// ──────────────────────────────────────────
-// CORE ENTITIES
-// ──────────────────────────────────────────
-
-Table groups {
-  id              int         [pk, increment]
-  name            varchar     [not null, unique]
-  stage           varchar     [not null]
-  qualified_slots int         [not null]
+Table Usuario {
+  id_usuario bigint [pk, increment]
+  nombre varchar(100) [not null]
+  apellido varchar(100) [not null]
+  correo varchar(150) [not null, unique]
+  estado enum('ACTIVO', 'INACTIVO') [not null]
+  fecha_registro datetime [not null]
 }
 
-Table teams {
-  id              int         [pk, increment]
-  name            varchar     [not null, unique]
-  country_code    varchar(3)  [not null, unique]
-  group_id        int         [ref: > groups.id]
+Table Credencial {
+  id_credencial bigint [pk, increment]
+  id_usuario bigint [not null]
+  username varchar(50) [not null, unique]
+  password_hash varchar(255) [not null]
+  ultimo_acceso datetime
 }
 
-Table players {
-  id              int         [pk, increment]
-  full_name       varchar     [not null]
-  team_id         int         [ref: > teams.id]
-  position        varchar     [not null]
+Table Rol {
+  id_rol bigint [pk, increment]
+  nombre varchar(50) [not null, unique]
+  descripcion varchar(200)
 }
 
-Table coaches {
-  id              int         [pk, increment]
-  full_name       varchar     [not null]
-  team_id         int         [ref: > teams.id, unique]
-  nationality     varchar     [not null]
+Table UsuarioRol {
+  id_usuario_rol bigint [pk, increment]
+  id_usuario bigint [not null]
+  id_rol bigint [not null]
 }
 
-Table stadiums {
-  id              int         [pk, increment]
-  name            varchar     [not null]
-  city            varchar     [not null]
-  capacity        int         [not null]
+Table Simulacion {
+  id_simulacion bigint [pk, increment]
+  nombre varchar(100) [not null]
+  fecha_creacion datetime [not null]
+  estado enum('EN_CURSO', 'FINALIZADA') [not null]
+  id_usuario bigint [not null]
 }
 
-Table matches {
-  id              int         [pk, increment]
-  stadium_id      int         [ref: > stadiums.id]
-  played_at       timestamp   [not null]
-  stage           varchar     [not null]
+Table Pais {
+  id_pais bigint [pk, increment]
+  nombre varchar(100) [not null, unique]
+  codigo_fifa char(3) [not null, unique]
+  continente varchar(50) [not null]
 }
 
-Table goals {
-  id              int         [pk, increment]
-  player_id       int         [ref: > players.id]
-  match_id        int         [ref: > matches.id]
-  minute          int         [not null]
+Table Grupo {
+  id_grupo bigint [pk, increment]
+  nombre char(1) [not null]
+  id_simulacion bigint [not null]
 }
 
-Table cards {
-  id              int         [pk, increment]
-  player_id       int         [ref: > players.id]
-  match_id        int         [ref: > matches.id]
-  card_type       varchar     [not null]
+Table Equipo {
+  id_equipo bigint [pk, increment]
+  nombre varchar(100) [not null]
+  id_pais bigint [not null]
+  id_grupo bigint [not null]
 }
 
-Table referees {
-  id              int         [pk, increment]
-  full_name       varchar     [not null]
-  nationality     varchar     [not null]
-  badge_level     varchar     [not null]
+Table Fase {
+  id_fase bigint [pk, increment]
+  nombre varchar(50) [not null, unique]
+  orden_fase int [not null]
 }
 
-Table awards {
-  id              int         [pk, increment]
-  name            varchar     [not null, unique]
-  category        varchar     [not null]
-  edition         varchar     [not null]
+Table Estadio {
+  id_estadio bigint [pk, increment]
+  nombre varchar(100) [not null]
+  ciudad varchar(100) [not null]
+  capacidad int [not null]
 }
 
-// ──────────────────────────────────────────
-// PIVOT TABLES
-// ──────────────────────────────────────────
-
-Table match_team {
-  match_id        int         [ref: > matches.id]
-  team_id         int         [ref: > teams.id]
-  is_home         boolean     [not null]
-  score           int         [not null]
-
-  indexes {
-    (match_id, team_id) [pk]
-  }
+Table Partido {
+  id_partido bigint [pk, increment]
+  id_simulacion bigint [not null]
+  id_fase bigint [not null]
+  id_estadio bigint [not null]
+  fecha datetime [not null]
+  estado enum('PENDIENTE', 'EN_JUEGO', 'FINALIZADO') [not null]
 }
 
-Table match_referee {
-  match_id        int         [ref: > matches.id]
-  referee_id      int         [ref: > referees.id]
-  assigned_at     timestamp   [not null]
-  role            varchar     [not null]
-
-  indexes {
-    (match_id, referee_id) [pk]
-  }
+Table ParticipantePartido {
+  id_participante_partido bigint [pk, increment]
+  id_partido bigint [not null]
+  id_equipo bigint [not null]
+  goles int [not null, default: 0]
+  resultado enum('GANADOR', 'PERDEDOR', 'EMPATE')
 }
 
-Table player_award {
-  player_id       int         [ref: > players.id]
-  award_id        int         [ref: > awards.id]
-  given_at        timestamp   [not null]
-  ceremony        varchar     [not null]
-
-  indexes {
-    (player_id, award_id) [pk]
-  }
+Table SimulacionEquipo {
+  id_simulacion_equipo bigint [pk, increment]
+  id_simulacion bigint [not null]
+  id_equipo bigint [not null]
 }
+
+Ref: Credencial.id_usuario > Usuario.id_usuario
+
+Ref: UsuarioRol.id_usuario > Usuario.id_usuario
+Ref: UsuarioRol.id_rol > Rol.id_rol
+
+Ref: Simulacion.id_usuario > Usuario.id_usuario
+
+Ref: Grupo.id_simulacion > Simulacion.id_simulacion
+
+Ref: Equipo.id_pais > Pais.id_pais
+Ref: Equipo.id_grupo > Grupo.id_grupo
+
+Ref: Partido.id_simulacion > Simulacion.id_simulacion
+Ref: Partido.id_fase > Fase.id_fase
+Ref: Partido.id_estadio > Estadio.id_estadio
+
+Ref: ParticipantePartido.id_partido > Partido.id_partido
+Ref: ParticipantePartido.id_equipo > Equipo.id_equipo
+
+/* Comentario importante sobre Equipo
+
+Si cada usuario tiene su propia simulación, NO es recomendable guardar un campo estado dentro de Equipo.
+
+¿Por qué?
+
+Porque el equipo Brasil es el mismo para todos los usuarios:
+
+Equipo
+-------
+1 | Brasil
+2 | Colombia
+3 | Argentina
+
+Supongamos:
+
+En la simulación de Thiago, Brasil queda eliminado en octavos.
+En la simulación de Carlos, Brasil sale campeón.
+
+Si guardas:
+
+estado = ELIMINADO
+
+o
+
+estado = CAMPEON
+
+en la tabla Equipo, habría un conflicto porque Brasil tendría dos estados distintos al mismo tiempo.
+
+Lo correcto es que el estado se obtenga a partir de los partidos jugados dentro de cada simulación.
+
+Por ejemplo:
+
+¿Ganó la final?
+→ Campeón
+
+¿Perdió una eliminatoria?
+→ Eliminado
+
+¿Sigue teniendo partidos pendientes?
+→ Activo
+
+Por eso el MER queda más limpio y profesional sin un campo estado en Equipo.*/
