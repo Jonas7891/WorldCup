@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.user.entity;
+package com.worldcup.worldcup.modules.user.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

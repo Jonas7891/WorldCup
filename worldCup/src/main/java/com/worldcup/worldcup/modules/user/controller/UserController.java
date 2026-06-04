@@ -12,14 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.worldcup.worldcup.user.entity.AppUser;
-import com.worldcup.worldcup.user.repository.UserRepository;
+import com.worldcup.worldcup.modules.user.service.UserDetailsServiceImpl;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
-    private final UserService service;
+    private final UserDetailsServiceImpl service;
 
     public UserController(UserService service) {
         this.service = service;
