@@ -10,4 +10,6 @@ public interface RoleMapper {
     Role toEntity(RoleRequest request);
 
     RoleResponse toResponse(Role entity);
+
+    Role toDomain(RoleRequest request);
 }

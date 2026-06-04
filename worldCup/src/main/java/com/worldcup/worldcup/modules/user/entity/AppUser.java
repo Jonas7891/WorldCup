@@ -1,14 +1,15 @@
 package com.worldcup.worldcup.modules.user.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.worldcup.worldcup.modules.role.entity.Role;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name="users")
 @Getter
@@ -20,10 +21,26 @@ public class AppUser{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, length=15)
-    private String username;
+    @Column(length=70, nullable = false)
+    private String firstName;
 
-    @Column (length=15)
-    private String password;
-    private String role;
+    @Column(length=70, nullable = false)
+    private String lastName;
+
+    @Column (length=70, nullable = false)
+    private String mail;
+
+    private boolean status;
+    private LocalDateTime register;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Credential credential;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles = new HashSet<>();
 }

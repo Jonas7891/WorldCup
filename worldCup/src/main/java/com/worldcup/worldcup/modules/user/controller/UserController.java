@@ -1,73 +1,48 @@
-package com.worldcup.worldcup.user.controller;
+package com.worldcup.worldcup.modules.user.controller;
+
+
+import com.worldcup.worldcup.modules.role.dto.RoleRequest;
+import com.worldcup.worldcup.modules.role.dto.RoleResponse;
+import com.worldcup.worldcup.modules.user.dto.UserRequest;
+import com.worldcup.worldcup.modules.user.dto.UserResponse;
+import com.worldcup.worldcup.modules.user.service.UserService;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.worldcup.worldcup.modules.user.service.UserDetailsServiceImpl;
-
+@AllArgsConstructor
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
+    private final UserService service;
 
-    private final UserDetailsServiceImpl service;
+    @GetMapping
+    public ResponseEntity<List<UserResponse>> findAll() {
+        return ResponseEntity.ok(service.findAll());
+    }
 
-    public UserController(UserService service) {
-        this.service = service;
+    @GetMapping("/{id}")
+    public ResponseEntity<UserResponse> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(service.findById(id));
     }
 
     @PostMapping
-    public AppUser create(@RequestBody AppUser user) {
-        return service.create(user);
+    public ResponseEntity<UserResponse> save( @RequestBody UserRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(service.save(request));
     }
 
-    @GetMapping
-    public List<AppUser> getAll() {
-        return service.findAll();
-    }
-}
-
-    // UPDATE
     @PutMapping("/{id}")
-    public ResponseEntity<AppUser> updateUser(
-            @PathVariable Long id,
-            @RequestBody AppUser userDetails) {
-
-        return repository.findById(id)
-                .map(user -> {
-
-                    user.setUsername(userDetails.getUsername());
-
-                    user.setPassword(userDetails.getPassword());
-
-                    user.setRole(userDetails.getRole());
-
-                    return ResponseEntity.ok(
-                            repository.save(user)
-                    );
-                })
-                .orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<UserResponse> update(@PathVariable Long id, @RequestBody UserRequest request) {
+        return ResponseEntity.ok(service.update(id, request));
     }
 
-    // DELETE
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-
-        return repository.findById(id)
-                .map(user -> {
-
-                    repository.delete(user);
-
-                    return ResponseEntity.noContent().<Void>build();
-                })
-                .orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        service.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -6,6 +6,7 @@ import com.worldcup.worldcup.modules.role.entity.Role;
 import com.worldcup.worldcup.modules.role.mapper.RoleMapper;
 import com.worldcup.worldcup.modules.role.repository.RoleRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,8 +42,12 @@ public class RoleServiceImpl implements RoleService{
 
     @Override
     public RoleResponse update(Long id, RoleRequest request) {
-        Role entity = mapper.toEntity(request);
-        Role saved = repository.save(entity);
+        Role existing = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Role not found"));
+        // Update fields if needed, but since mapper.toDomain creates new, perhaps merge
+        Role updated = mapper.toDomain(request);
+        updated.setId(id); // Assuming Action has setId
+        Role saved = repository.save(updated);
         return mapper.toResponse(saved);
     }
 
