@@ -91,6 +91,29 @@ Table SimulacionEquipo {
   id_equipo bigint [not null]
 }
 
+Table PartidoOficial {
+  id_partido_oficial bigint [pk, increment] 
+  id_fase bigint [not null]
+  id_estadio bigint [not null]
+  fecha datetime [not null]
+  estado enum('PENDIENTE', 'EN_JUEGO', 'FINALIZADO') [not null] 
+}
+
+Table ParticipantePartidoOficial {
+  id_participante_partido_oficial bigint [pk, increment]
+  id_partido_oficial bigint [not null]
+  id_equipo bigint [not null]
+  goles int [not null, default: 0]
+  resultado enum('GANADOR', 'PERDEDOR', 'EMPATE') 
+}
+
+
+
+  Ref: PartidoOficial.id_fase > Fase.id_fase 
+  Ref: PartidoOficial.id_estadio > Estadio.id_estadio 
+  Ref: ParticipantePartidoOficial.id_partido_oficial > PartidoOficial.id_partido_oficial 
+  Ref: ParticipantePartidoOficial.id_equipo > Equipo.id_equipo
+
 Ref: Credencial.id_usuario > Usuario.id_usuario
 
 Ref: UsuarioRol.id_usuario > Usuario.id_usuario
