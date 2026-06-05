@@ -1,5 +1,6 @@
 package com.worldcup.worldcup.modules.user.entity;
 
+import com.worldcup.worldcup.modules.credential.entity.Credential;
 import com.worldcup.worldcup.modules.role.entity.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
