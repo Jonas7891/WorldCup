@@ -4,7 +4,7 @@ import com.worldcup.worldcup.modules.auth.role.dto.RoleRequest;
 import com.worldcup.worldcup.modules.auth.role.dto.RoleResponse;
 import com.worldcup.worldcup.modules.auth.role.entity.Role;
 import com.worldcup.worldcup.modules.auth.role.mapper.RoleMapper;
-import com.worldcup.worldcup.modules.auth.role.repository.RoleRepository;
+import com.worldcup.worldcup.modules.auth.role.service.repository.RoleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
