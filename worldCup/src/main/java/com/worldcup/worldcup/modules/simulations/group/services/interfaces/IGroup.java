@@ -1,18 +1,18 @@
-package com.worldcup.worldcup.modules.mundial.team.services.interfaces;
+package com.worldcup.worldcup.modules.simulations.group.services.interfaces;
 
-import com.worldcup.worldcup.modules.mundial.team.dto.TeamDTO;
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
+import com.worldcup.worldcup.modules.simulations.group.dto.GroupDTO;
+import com.worldcup.worldcup.modules.simulations.group.entity.Group;
 
 import java.util.List;
 
-public interface ITeam {
-    public String CreateCountry(TeamDTO teamDTO);
-    public List<Team> GetAll();
-    public Team GetById(Integer teamId);
-    public Team Update(Integer teamId, TeamDTO teamDTO);
-    public Team PartialUpdate(Integer teamId, TeamDTO teamDTO);
-    public boolean Delete(Integer teamId);
-    public boolean LogicalDelete(Integer teamId);
+public interface IGroup {
+    public String CreateCountry(GroupDTO groupDTO);
+    public List<Group> GetAll();
+    public Group GetById(Integer groupId);
+    public Group Update(Integer groupId, GroupDTO groupDTO);
+    public Group PartialUpdate(Integer groupId, GroupDTO groupDTO);
+    public boolean Delete(Integer groupId);
+    public boolean LogicalDelete(Integer groupId);
 
-    String Create(TeamDTO teamDTO);
+    String Create(GroupDTO groupDTO);
 }

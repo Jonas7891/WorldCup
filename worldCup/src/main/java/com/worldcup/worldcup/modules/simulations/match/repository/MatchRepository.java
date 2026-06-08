@@ -1,14 +1,14 @@
-package com.worldcup.worldcup.modules.simulations.group.repository;
+package com.worldcup.worldcup.modules.simulations.match.repository;
 
-import com.worldcup.worldcup.modules.simulations.group.entity.Group;
+import com.worldcup.worldcup.modules.simulations.match.entity.Match;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface GroupRepository extends JpaRepository<Group, Integer>{
+public interface MatchRepository extends JpaRepository<Match, Integer>{
 
 	// Find only active teams (status = true)
-	java.util.List<Group> findByStatusTrue();
+	java.util.List<Match> findByStatusTrue();
 
 	// Check if team with given name already exists
 	@Query("SELECT CASE WHEN COUNT(t) > 0 THEN true ELSE false END FROM team t WHERE t.name = :name")

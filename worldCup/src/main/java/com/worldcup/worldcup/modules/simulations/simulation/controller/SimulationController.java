@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.simulations.group.controller;
+package com.worldcup.worldcup.modules.simulations.simulation.controller;
 
-import com.worldcup.worldcup.modules.simulations.group.dto.GroupDTO;
-import com.worldcup.worldcup.modules.simulations.group.entity.Group;
-import com.worldcup.worldcup.modules.simulations.group.services.interfaces.IGroup;
+import com.worldcup.worldcup.modules.simulations.simulation.dto.SimulationDTO;
+import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
+import com.worldcup.worldcup.modules.simulations.simulation.services.interfaces.ISimulation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,34 +12,34 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/groups")
-public class GroupController {
-	private final IGroup service;
+@RequestMapping("/api/simulation")
+public class SimulationController {
+	private final ISimulation service;
 
 	@PostMapping
-	public ResponseEntity<String> create(@RequestBody GroupDTO groupDTO) {
-		String result = service.Create(groupDTO);
+	public ResponseEntity<String> create(@RequestBody SimulationDTO simulationDTO) {
+		String result = service.Create(simulationDTO);
 		return ResponseEntity.status(HttpStatus.CREATED).body(result);
 	}
 
 	@GetMapping
-	public ResponseEntity<List<Group>> getAll() {
+	public ResponseEntity<List<Simulation>> getAll() {
 		return ResponseEntity.ok(service.GetAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Group> getById(@PathVariable Integer id) {
+	public ResponseEntity<Simulation> getById(@PathVariable Integer id) {
 		return ResponseEntity.ok(service.GetById(id));
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Group> update(@PathVariable Integer id, @RequestBody GroupDTO groupDTO) {
-		return ResponseEntity.ok(service.Update(id, groupDTO));
+	public ResponseEntity<Simulation> update(@PathVariable Integer id, @RequestBody SimulationDTO simulationDTO) {
+		return ResponseEntity.ok(service.Update(id, simulationDTO));
 	}
 
 	@PatchMapping("/{id}")
-	public ResponseEntity<Group> partialUpdate(@PathVariable Integer id, @RequestBody GroupDTO groupDTO) {
-		return ResponseEntity.ok(service.PartialUpdate(id, groupDTO));
+	public ResponseEntity<Simulation> partialUpdate(@PathVariable Integer id, @RequestBody SimulationDTO simulationDTO) {
+		return ResponseEntity.ok(service.PartialUpdate(id, simulationDTO));
 	}
 
 	@DeleteMapping("/{id}")

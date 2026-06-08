@@ -1,189 +1,181 @@
-package com.worldcup.worldcup.modules.mundial.team.services.implement;
+package com.worldcup.worldcup.modules.simulations.group.services.implement;
 
-import com.worldcup.worldcup.modules.mundial.team.dto.TeamDTO;
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
-import com.worldcup.worldcup.modules.mundial.team.mapper.TeamMapper;
-import com.worldcup.worldcup.modules.mundial.team.repository.TeamRepository;
-import com.worldcup.worldcup.modules.mundial.team.services.interfaces.ITeam;
-import com.worldcup.worldcup.modules.mundial.team.validator.TeamValidator;
+import com.worldcup.worldcup.modules.simulations.group.dto.GroupDTO;
+import com.worldcup.worldcup.modules.simulations.group.entity.Group;
+import com.worldcup.worldcup.modules.simulations.group.mapper.GroupMapper;
+import com.worldcup.worldcup.modules.simulations.group.repository.GroupRepository;
+import com.worldcup.worldcup.modules.simulations.group.services.interfaces.IGroup;
+import com.worldcup.worldcup.modules.simulations.group.validator.GroupValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TeamImplement implements ITeam {
+public class GroupImplement implements IGroup {
     @Autowired
-    private TeamRepository teamRepository;
+    private GroupRepository groupRepository;
 
     @Autowired
-    private TeamMapper teamMapper;
+    private GroupMapper groupMapper;
 
     @Autowired
-    private TeamValidator teamValidator;
+    private GroupValidator groupValidator;
 
     @Override
-    public String Create(TeamDTO teamDTO){
+    public String Create(GroupDTO groupDTO){
         try {
-            teamValidator.validateTeamDTO(teamDTO);
-            if (teamDTO.getStatus() == null) {
-                teamDTO.setStatus(Boolean.TRUE);
+            groupValidator.validateGroupDTO(groupDTO);
+            if (groupDTO.getStatus() == null) {
+                groupDTO.setStatus(Boolean.TRUE);
             }
 
-            Team team = teamMapper.toEntity(teamDTO);
-            // Ensure id is null so JPA will insert a new row
-            team.setId_team(null);
-            // Check for duplicates by name before insert
-            if (teamRepository.existsByName(team.getName())) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "El equipo con ese nombre ya existe: " + team.getName());
+            Group group = groupMapper.toEntity(groupDTO);
+            group.setId_group(null);
+            if (groupRepository.existsByName(group.getName())) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "El grupo con ese nombre ya existe: " + group.getName());
             }
 
             try {
-                teamRepository.save(team);
+                groupRepository.save(group);
             } catch (DataIntegrityViolationException ex) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "Error al crear el equipo: posible duplicado de datos.", ex);
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "Error al crear el Grupo: posible duplicado de datos.", ex);
             }
 
-            return "Equipo creado exitosamente";
+            return "Grupo creado exitosamente";
         } catch (IllegalArgumentException e) {
             return "Error de validación: " + e.getMessage();
         } catch (Exception e) {
-            return "Error al crear el Equipo: " + e.getMessage();
+            return "Error al crear el Grupo: " + e.getMessage();
         }
     }
 
     @Override
-    public String CreateCountry(TeamDTO teamDTO) {
-        return Create(teamDTO);
+    public String CreateCountry(GroupDTO groupDTO) {
+        return Create(groupDTO);
     }
 
     @Override
-    public List<Team> GetAll() {
+    public List<Group> GetAll() {
         try {
-                return teamRepository.findByStatusTrue();
+                return groupRepository.findByStatusTrue();
         } catch (Exception e) {
-            throw new RuntimeException("Error al obtener los equipos: " + e.getMessage());
+            throw new RuntimeException("Error al obtener los grupos: " + e.getMessage());
         }
     }
 
     @Override
-    public Team GetById(Integer teamId) {
+    public Group GetById(Integer groupId) {
         try {
-            teamValidator.validateTeamId(teamId);
+            groupValidator.validateGroupId(groupId);
 
-            Optional<Team> team = teamRepository.findById(teamId);
-            if (team.isEmpty()) {
-                throw new RuntimeException("Equipo no encontrado con ID: " + teamId);
+            Optional<Group> group = groupRepository.findById(groupId);
+            if (group.isEmpty()) {
+                throw new RuntimeException("Grupo no encontrado con ID: " + groupId);
             }
-            return team.get();
+            return group.get();
         } catch (Exception e) {
-            throw new RuntimeException("Error al obtener el equipo: " + e.getMessage());
+            throw new RuntimeException("Error al obtener el grupo: " + e.getMessage());
         }
     }
 
     @Override
-    public Team Update(Integer teamId, TeamDTO teamDTO) {
+    public Group Update(Integer groupId, GroupDTO groupDTO) {
         try {
-            teamValidator.validateTeamId(teamId);
-            teamValidator.validateTeamDTO(teamDTO);
+            groupValidator.validateGroupId(groupId);
+            groupValidator.validateGroupDTO(groupDTO);
 
-            Optional<Team> teamExistente = teamRepository.findById(teamId);
-            if (teamExistente.isEmpty()) {
-                throw new RuntimeException("Equipo no encontrado con ID: " + teamId);
+            Optional<Group> groupExistente = groupRepository.findById(groupId);
+            if (groupExistente.isEmpty()) {
+                throw new RuntimeException("Grupo no encontrado con ID: " + groupId);
             }
 
-            Team team = teamExistente.get();
-            // Check if new name already exists and is different from current
-            if (!team.getName().equals(teamDTO.getName()) &&
-                teamRepository.existsByName(teamDTO.getName())) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "El equipo con ese nombre ya existe: " + teamDTO.getName());
+            Group group = groupExistente.get();
+            if (!group.getName().equals(groupDTO.getName()) &&
+                groupRepository.existsByName(groupDTO.getName())) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "El grupo con ese nombre ya existe: " + groupDTO.getName());
             }
 
-            team.setName(teamDTO.getName());
-            team.setId_group(teamDTO.getId_group());
-            team.setId_country(teamDTO.getId_country());
-            if (teamDTO.getStatus() != null) {
-                team.setStatus(teamDTO.getStatus());
+            group.setName(groupDTO.getName());
+            group.setId_group(groupDTO.getId_group());
+            if (groupDTO.getStatus() != null) {
+                group.setStatus(groupDTO.getStatus());
             }
 
-            return teamRepository.save(team);
+            return groupRepository.save(group);
         } catch (Exception e) {
-            throw new RuntimeException("Error al actualizar el equipo: " + e.getMessage());
+            throw new RuntimeException("Error al actualizar el grupo: " + e.getMessage());
         }
     }
 
     @Override
-    public Team PartialUpdate(Integer teamId, TeamDTO teamDTO) {
+    public Group PartialUpdate(Integer groupId, GroupDTO groupDTO) {
         try {
-            teamValidator.validateTeamId(teamId);
+            groupValidator.validateGroupId(groupId);
 
-            Optional<Team> teamExistente = teamRepository.findById(teamId);
-            if (teamExistente.isEmpty()) {
-                throw new RuntimeException("Equipo no encontrado con ID: " + teamId);
+            Optional<Group> groupExistente = groupRepository.findById(groupId);
+            if (groupExistente.isEmpty()) {
+                throw new RuntimeException("Grupo no encontrado con ID: " + groupId);
             }
 
-            Team team = teamExistente.get();
-            if (teamDTO.getName() != null) {
-                // Check if new name already exists
-                if (!team.getName().equals(teamDTO.getName()) &&
-                    teamRepository.existsByName(teamDTO.getName())) {
-                    throw new ResponseStatusException(HttpStatus.CONFLICT, "El equipo con ese nombre ya existe: " + teamDTO.getName());
+            Group group = groupExistente.get();
+            if (groupDTO.getName() != null) {
+                if (!group.getName().equals(groupDTO.getName()) &&
+                    groupRepository.existsByName(groupDTO.getName())) {
+                    throw new ResponseStatusException(HttpStatus.CONFLICT, "El grupo con ese nombre ya existe: " + groupDTO.getName());
                 }
-                team.setName(teamDTO.getName());
+                group.setName(groupDTO.getName());
             }
-            if (teamDTO.getId_group() > 0) {
-                team.setId_group(teamDTO.getId_group());
+            if (groupDTO.getId_group() > 0) {
+                group.setId_group(groupDTO.getId_group());
             }
-            if (teamDTO.getId_country() > 0) {
-                team.setId_country(teamDTO.getId_country());
-            }
-            if (teamDTO.getStatus() != null) {
-                team.setStatus(teamDTO.getStatus());
+            if (groupDTO.getStatus() != null) {
+                group.setStatus(groupDTO.getStatus());
             }
 
-            return teamRepository.save(team);
+            return groupRepository.save(group);
         } catch (Exception e) {
-            throw new RuntimeException("Error al actualizar parcialmente el equipo: " + e.getMessage());
+            throw new RuntimeException("Error al actualizar parcialmente el grupo: " + e.getMessage());
         }
     }
 
     @Override
-        public boolean Delete(Integer teamId) {
+        public boolean Delete(Integer groupId) {
         try {
-            teamValidator.validateTeamId(teamId);
+            groupValidator.validateGroupId(groupId);
 
-            Optional<Team> team = teamRepository.findById(teamId);
-            if (team.isEmpty()) {
-                throw new RuntimeException("Equipo no encontrado con ID: " + teamId);
+            Optional<Group> group = groupRepository.findById(groupId);
+            if (group.isEmpty()) {
+                throw new RuntimeException("Grupo no encontrado con ID: " + groupId);
             }
 
-            teamRepository.deleteById(teamId);
+            groupRepository.deleteById(groupId);
             return true;
         } catch (Exception e) {
-            throw new RuntimeException("Error al eliminar el equipo: " + e.getMessage());
+            throw new RuntimeException("Error al eliminar el grupo: " + e.getMessage());
         }
     }
 
     @Override
-    public boolean LogicalDelete(Integer teamId) {
+    public boolean LogicalDelete(Integer groupId) {
         try {
-            teamValidator.validateTeamId(teamId);
+            groupValidator.validateGroupId(groupId);
 
-            Optional<Team> teamExistente = teamRepository.findById(teamId);
-            if (teamExistente.isEmpty()) {
-                throw new RuntimeException("Equipo no encontrado con ID: " + teamId);
+            Optional<Group> groupExistente = groupRepository.findById(groupId);
+            if (groupExistente.isEmpty()) {
+                throw new RuntimeException("Grupo no encontrado con ID: " + groupId);
             }
 
-            Team team = teamExistente.get();
-            team.setStatus(Boolean.FALSE);
-            teamRepository.save(team);
+            Group group = groupExistente.get();
+            group.setStatus(Boolean.FALSE);
+            groupRepository.save(group);
             return true;
         } catch (Exception e) {
-            throw new RuntimeException("Error al eliminar lógicamente el equipo: " + e.getMessage());
+            throw new RuntimeException("Error al eliminar lógicamente el grupo: " + e.getMessage());
         }
     }
 }

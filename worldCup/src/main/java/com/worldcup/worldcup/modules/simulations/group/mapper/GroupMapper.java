@@ -1,42 +1,40 @@
-package com.worldcup.worldcup.modules.mundial.team.mapper;
+package com.worldcup.worldcup.modules.simulations.group.mapper;
 
-import com.worldcup.worldcup.modules.mundial.team.dto.TeamDTO;
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
+import com.worldcup.worldcup.modules.simulations.group.dto.GroupDTO;
+import com.worldcup.worldcup.modules.simulations.group.entity.Group;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TeamMapper {
-    public TeamDTO toDTO(Team team) {
-        if (team == null) {
+public class GroupMapper {
+    public GroupDTO toDTO(Group group) {
+        if (group == null) {
             return null;
         }
 
-        TeamDTO teamDTO = new TeamDTO();
-        teamDTO.setId_team(team.getId_team());
-        teamDTO.setName(team.getName());
-        teamDTO.setId_country(team.getId_country());
-        teamDTO.setId_group(team.getId_group());
-        teamDTO.setStatus(team.getStatus());
+        GroupDTO groupDTO = new GroupDTO();
+        groupDTO.setId_group(group.getId_group());
+        groupDTO.setName(group.getName());
+        groupDTO.setId_group(group.getId_group());
+        groupDTO.setStatus(group.getStatus());
 
-        return teamDTO;
+        return groupDTO;
     }
 
-    public Team toEntity(TeamDTO teamDTO) {
-        if (teamDTO == null) {
+    public Group toEntity(GroupDTO groupDTO) {
+        if (groupDTO == null) {
             return null;
         }
 
-        Team team = new Team();
-        if (teamDTO.getId_team() != null) {
-            team.setId_team(teamDTO.getId_team());
+        Group group = new Group();
+        if (groupDTO.getId_group()   != null) {
+            group.setId_group(groupDTO.getId_group());
         } else {
-            team.setId_team(null);
+            group.setId_group(null);
         }
-        team.setName(teamDTO.getName());
-        team.setId_country(teamDTO.getId_country());
-        team.setId_group(teamDTO.getId_group());
-        team.setStatus(teamDTO.getStatus());
+        group.setName(groupDTO.getName());
+        group.setId_group(groupDTO.getId_group());
+        group.setStatus(groupDTO.getStatus());
 
-        return team;
+        return group;
     }
 }

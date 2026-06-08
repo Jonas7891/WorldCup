@@ -1,30 +1,27 @@
-package com.worldcup.worldcup.modules.mundial.team.validator;
+package com.worldcup.worldcup.modules.simulations.group.validator;
 
-import com.worldcup.worldcup.modules.mundial.team.dto.TeamDTO;
+import com.worldcup.worldcup.modules.simulations.group.dto.GroupDTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TeamValidator {
+public class GroupValidator {
 
-    public boolean validateTeamDTO(TeamDTO teamDTO) {
-        if (teamDTO == null) {
+    public boolean validateGroupDTO(GroupDTO groupDTO) {
+        if (groupDTO == null) {
             return false;
         }
-        if (teamDTO.getName() == null || teamDTO.getName().isEmpty() || teamDTO.getName().length() > 100) {
-            throw new IllegalArgumentException("El nombre del equipo no puede estar vacío y/o superar los 100 caracteres.");
+        if (groupDTO.getName() == null || groupDTO.getName().isEmpty() || groupDTO.getName().length() > 100) {
+            throw new IllegalArgumentException("El nombre del equipo no puede estar vacío y/o superar un 1 carácter.");
         }
-        if (teamDTO.getId_group() <= 0) {
+        if (groupDTO.getId_group() <= 0) {
             throw new IllegalArgumentException("El identificador del grupo debe ser mayor que cero.");
-        }
-        if (teamDTO.getId_country() <= 0) {
-            throw new IllegalArgumentException("El identificador del país debe ser mayor que cero.");
         }
         return true;
     }
 
-    public void validateTeamId(Integer teamId) {
-        if (teamId == null || teamId <= 0) {
-            throw new IllegalArgumentException("El identificador del equipo debe ser mayor que cero.");
+    public void validateGroupId(Integer groupId) {
+        if (groupId == null || groupId <= 0) {
+            throw new IllegalArgumentException("El identificador del grupo debe ser mayor que cero.");
         }
     }
 }
