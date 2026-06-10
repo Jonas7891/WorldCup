@@ -1,25 +1,25 @@
-package com.worldcup.worldCup.modules.simulations.group.validator;
+package com.worldcup.worldCup.modules.simulations.groups.validator;
 
-import com.worldcup.worldCup.modules.simulations.group.dto.GroupDTO;
+import com.worldcup.worldCup.modules.simulations.groups.dto.GroupsDTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GroupValidator {
+public class GroupsValidator {
 
-    public boolean validateGroupDTO(GroupDTO groupDTO) {
-        if (groupDTO == null) {
+    public boolean validateGroupsDTO(GroupsDTO groupsDTO) {
+        if (groupsDTO == null) {
             return false;
         }
-        if (groupDTO.getName() == null || groupDTO.getName().isEmpty() || groupDTO.getName().length() > 100) {
+        if (groupsDTO.getName() == null || groupsDTO.getName().isEmpty() || groupsDTO.getName().length() > 100) {
             throw new IllegalArgumentException("El nombre del equipo no puede estar vacío y/o superar un 1 carácter.");
         }
-        if (groupDTO.getId_group() <= 0) {
+        if (groupsDTO.getId_group() <= 0) {
             throw new IllegalArgumentException("El identificador del grupo debe ser mayor que cero.");
         }
         return true;
     }
 
-    public void validateGroupId(Integer groupId) {
+    public void validateGroupsId(Integer groupId) {
         if (groupId == null || groupId <= 0) {
             throw new IllegalArgumentException("El identificador del grupo debe ser mayor que cero.");
         }

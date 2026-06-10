@@ -1,4 +1,4 @@
-package com.worldcup.worldCup.modules.simulations.group.dto;
+package com.worldcup.worldCup.modules.simulations.groups.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class GroupDTO {
+public class GroupsDTO {
     private Integer id_group;
     private String name;
     private int id_simulation;

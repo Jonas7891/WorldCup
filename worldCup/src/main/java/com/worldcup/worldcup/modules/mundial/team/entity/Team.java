@@ -1,7 +1,7 @@
 package com.worldcup.worldCup.modules.mundial.team.entity;
 
 import com.worldcup.worldCup.modules.mundial.country.entity.Country;
-import com.worldcup.worldCup.modules.simulations.group.entity.Group;
+import com.worldcup.worldCup.modules.simulations.groups.entity.Groups;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,7 +30,7 @@ public class Team {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_group", nullable = false)
-    private Group group;
+    private Groups groups;
 
     @Column(name="status", nullable = false)
     private Boolean status;

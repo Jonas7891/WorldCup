@@ -1,4 +1,4 @@
-package com.worldcup.worldCup.modules.simulations.group.entity;
+package com.worldcup.worldCup.modules.simulations.groups.entity;
 
 import com.worldcup.worldCup.modules.simulations.simulation.entity.Simulation;
 import jakarta.persistence.*;
@@ -7,14 +7,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name="group")
-@Table(name="group")
+@Entity(name="groups")
+@Table(name="groups")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Group {
+public class Groups {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id_group", nullable = false)
