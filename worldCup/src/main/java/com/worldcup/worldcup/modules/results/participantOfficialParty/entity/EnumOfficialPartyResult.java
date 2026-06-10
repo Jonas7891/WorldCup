@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.results.participantOfficialParty.entity;
+package com.worldcup.worldCup.modules.results.participantOfficialParty.entity;
 
 public enum EnumOfficialPartyResult {
     WINNER,

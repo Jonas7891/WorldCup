@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.mundial.country.services.interfaces;
+package com.worldcup.worldCup.modules.mundial.country.services.interfaces;
 
-import com.worldcup.worldcup.modules.mundial.country.dto.CountryDTO;
-import com.worldcup.worldcup.modules.mundial.country.entity.Country;
+import com.worldcup.worldCup.modules.mundial.country.dto.CountryDTO;
+import com.worldcup.worldCup.modules.mundial.country.entity.Country;
 import java.util.List;
 
 public interface ICountry {

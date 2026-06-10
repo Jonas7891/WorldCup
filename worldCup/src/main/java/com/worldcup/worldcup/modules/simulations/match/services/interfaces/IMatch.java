@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.simulations.match.services.interfaces;
+package com.worldcup.worldCup.modules.simulations.match.services.interfaces;
 
-import com.worldcup.worldcup.modules.simulations.match.dto.MatchDTO;
-import com.worldcup.worldcup.modules.simulations.match.entity.Match;
+import com.worldcup.worldCup.modules.simulations.match.dto.MatchDTO;
+import com.worldcup.worldCup.modules.simulations.match.entity.Match;
 
 import java.util.List;
 

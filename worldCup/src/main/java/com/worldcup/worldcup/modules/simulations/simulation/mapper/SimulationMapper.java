@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.simulations.simulation.mapper;
+package com.worldcup.worldCup.modules.simulations.simulation.mapper;
 
-import com.worldcup.worldcup.modules.simulations.simulation.dto.SimulationDTO;
-import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
+import com.worldcup.worldCup.modules.simulations.simulation.dto.SimulationDTO;
+import com.worldcup.worldCup.modules.simulations.simulation.entity.Simulation;
 import org.springframework.stereotype.Component;
 
 @Component

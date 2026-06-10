@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.results.oficialMatches.service;
+package com.worldcup.worldCup.modules.results.oficialMatches.service;
 
-import com.worldcup.worldcup.modules.results.oficialMatches.dto.request.OficialMatchCreateRequest;
-import com.worldcup.worldcup.modules.results.oficialMatches.dto.request.OficialMatchUpdateRequest;
-import com.worldcup.worldcup.modules.results.oficialMatches.dto.response.OficialMatchResponse;
+import com.worldcup.worldCup.modules.results.oficialMatches.dto.request.OficialMatchCreateRequest;
+import com.worldcup.worldCup.modules.results.oficialMatches.dto.request.OficialMatchUpdateRequest;
+import com.worldcup.worldCup.modules.results.oficialMatches.dto.response.OficialMatchResponse;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
-package com.worldcup.worldcup.modules.simulations.teamSimulation.controller;
+package com.worldcup.worldCup.modules.simulations.teamSimulation.controller;
 
-import com.worldcup.worldcup.modules.simulations.teamSimulation.dto.TeamSimulationDTO;
-import com.worldcup.worldcup.modules.simulations.teamSimulation.entity.TeamSimulation;
-import com.worldcup.worldcup.modules.simulations.teamSimulation.mapper.TeamSimulationMapper;
-import com.worldcup.worldcup.modules.simulations.teamSimulation.services.interfaces.ITeamSimulation;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.dto.TeamSimulationDTO;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.entity.TeamSimulation;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.mapper.TeamSimulationMapper;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.services.interfaces.ITeamSimulation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,15 +1,15 @@
-package com.worldcup.worldcup.modules.simulations.teamSimulation.services.implement;
+package com.worldcup.worldCup.modules.simulations.teamSimulation.services.implement;
 
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
-import com.worldcup.worldcup.modules.mundial.team.repository.TeamRepository;
-import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
-import com.worldcup.worldcup.modules.simulations.simulation.repository.SimulationRepository;
-import com.worldcup.worldcup.modules.simulations.teamSimulation.dto.TeamSimulationDTO;
-import com.worldcup.worldcup.modules.simulations.teamSimulation.entity.TeamSimulation;
-import com.worldcup.worldcup.modules.simulations.teamSimulation.mapper.TeamSimulationMapper;
-import com.worldcup.worldcup.modules.simulations.teamSimulation.repository.TeamSimulationRepository;
-import com.worldcup.worldcup.modules.simulations.teamSimulation.services.interfaces.ITeamSimulation;
-import com.worldcup.worldcup.modules.simulations.teamSimulation.validator.TeamSimulationValidator;
+import com.worldcup.worldCup.modules.mundial.team.entity.Team;
+import com.worldcup.worldCup.modules.mundial.team.repository.TeamRepository;
+import com.worldcup.worldCup.modules.simulations.simulation.entity.Simulation;
+import com.worldcup.worldCup.modules.simulations.simulation.repository.SimulationRepository;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.dto.TeamSimulationDTO;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.entity.TeamSimulation;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.mapper.TeamSimulationMapper;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.repository.TeamSimulationRepository;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.services.interfaces.ITeamSimulation;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.validator.TeamSimulationValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

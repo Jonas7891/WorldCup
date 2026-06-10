@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.simulations.match.entity;
+package com.worldcup.worldCup.modules.simulations.match.entity;
 
-import com.worldcup.worldcup.modules.mundial.phase.entity.Phase;
-import com.worldcup.worldcup.modules.mundial.stadium.entity.Stadium;
-import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
+import com.worldcup.worldCup.modules.mundial.phase.entity.Phase;
+import com.worldcup.worldCup.modules.mundial.stadium.entity.Stadium;
+import com.worldcup.worldCup.modules.simulations.simulation.entity.Simulation;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,14 +1,15 @@
-package com.worldcup.worldcup.modules.simulations.participatingParty.entity;
+package com.worldcup.worldCup.modules.simulations.participatingParty.entity;
 
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
-import com.worldcup.worldcup.modules.simulations.match.entity.Match;
+import com.worldcup.worldCup.modules.mundial.team.entity.Team;
+import com.worldcup.worldCup.modules.simulations.match.entity.Match;
+import com.worldcup.worldCup.modules.simulations.participatingParty.entity.EnumParticipatingPartyResult;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "participating_party")
 @Table(name = "participating_party")
 @Data
 @Builder
@@ -36,4 +37,3 @@ public class ParticipatingParty {
     @Column(name = "result")
     private EnumParticipatingPartyResult result;
 }
-

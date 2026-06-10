@@ -1,22 +1,12 @@
-package com.worldcup.worldcup.modules.simulations.participatingParty.mapper;
+package com.worldcup.worldCup.modules.simulations.participatingParty.mapper;
 
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
-import com.worldcup.worldcup.modules.mundial.team.repository.TeamRepository;
-import com.worldcup.worldcup.modules.simulations.match.entity.Match;
-import com.worldcup.worldcup.modules.simulations.match.repository.MatchRepository;
-import com.worldcup.worldcup.modules.simulations.participatingParty.dto.ParticipatingPartyDTO;
-import com.worldcup.worldcup.modules.simulations.participatingParty.entity.ParticipatingParty;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.worldcup.worldCup.modules.simulations.participatingParty.dto.ParticipatingPartyDTO;
+import com.worldcup.worldCup.modules.simulations.participatingParty.entity.ParticipatingParty;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ParticipatingPartyMapper {
 
-    @Autowired
-    private MatchRepository matchRepository;
-
-    @Autowired
-    private TeamRepository teamRepository;
 
     public ParticipatingPartyDTO toDTO(ParticipatingParty participatingParty) {
         if (participatingParty == null) {

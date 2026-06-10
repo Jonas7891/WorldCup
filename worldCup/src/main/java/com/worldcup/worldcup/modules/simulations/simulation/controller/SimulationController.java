@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.simulations.simulation.controller;
+package com.worldcup.worldCup.modules.simulations.simulation.controller;
 
-import com.worldcup.worldcup.modules.simulations.simulation.dto.SimulationDTO;
-import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
-import com.worldcup.worldcup.modules.simulations.simulation.services.interfaces.ISimulation;
+import com.worldcup.worldCup.modules.simulations.simulation.dto.SimulationDTO;
+import com.worldcup.worldCup.modules.simulations.simulation.entity.Simulation;
+import com.worldcup.worldCup.modules.simulations.simulation.services.interfaces.ISimulation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.config;
+package com.worldcup.worldCup.config;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

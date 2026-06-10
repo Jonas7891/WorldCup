@@ -1,9 +1,9 @@
-package com.worldcup.worldcup.modules.mundial.country.repository;
+package com.worldcup.worldCup.modules.mundial.country.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import com.worldcup.worldcup.modules.mundial.country.entity.Country;
+import com.worldcup.worldCup.modules.mundial.country.entity.Country;
 
 public interface CountryRepository extends JpaRepository<Country, Integer>{
 

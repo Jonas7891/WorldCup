@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.mundial.stadium.dto;
+package com.worldcup.worldCup.modules.mundial.stadium.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

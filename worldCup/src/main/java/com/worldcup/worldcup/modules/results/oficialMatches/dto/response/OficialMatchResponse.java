@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.results.oficialMatches.dto.response;
+package com.worldcup.worldCup.modules.results.oficialMatches.dto.response;
 
 
-import com.worldcup.worldcup.modules.results.oficialMatches.enums.OficialMatchStatus;
+import com.worldcup.worldCup.modules.results.oficialMatches.enums.OficialMatchStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

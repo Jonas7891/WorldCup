@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.mundial.country.dto;
+package com.worldcup.worldCup.modules.mundial.country.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

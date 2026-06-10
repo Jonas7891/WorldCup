@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.simulations.match.repository;
+package com.worldcup.worldCup.modules.simulations.match.repository;
 
-import com.worldcup.worldcup.modules.simulations.match.entity.Match;
+import com.worldcup.worldCup.modules.simulations.match.entity.Match;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

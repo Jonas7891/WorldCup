@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.mundial.country.controller;
+package com.worldcup.worldCup.modules.mundial.country.controller;
 
-import com.worldcup.worldcup.modules.mundial.country.dto.CountryDTO;
-import com.worldcup.worldcup.modules.mundial.country.entity.Country;
-import com.worldcup.worldcup.modules.mundial.country.services.interfaces.ICountry;
+import com.worldcup.worldCup.modules.mundial.country.dto.CountryDTO;
+import com.worldcup.worldCup.modules.mundial.country.entity.Country;
+import com.worldcup.worldCup.modules.mundial.country.services.interfaces.ICountry;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

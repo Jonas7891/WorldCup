@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.simulations.participatingParty.dto;
+package com.worldcup.worldCup.modules.simulations.participatingParty.dto;
 
-import com.worldcup.worldcup.modules.simulations.participatingParty.entity.EnumParticipatingPartyResult;
+import com.worldcup.worldCup.modules.simulations.participatingParty.entity.EnumParticipatingPartyResult;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

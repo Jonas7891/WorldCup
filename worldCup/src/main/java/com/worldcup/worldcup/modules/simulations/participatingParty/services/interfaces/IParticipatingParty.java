@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.simulations.participatingParty.services.interfaces;
+package com.worldcup.worldCup.modules.simulations.participatingParty.services.interfaces;
 
-import com.worldcup.worldcup.modules.simulations.participatingParty.dto.ParticipatingPartyDTO;
-import com.worldcup.worldcup.modules.simulations.participatingParty.entity.ParticipatingParty;
+import com.worldcup.worldCup.modules.simulations.participatingParty.dto.ParticipatingPartyDTO;
+import com.worldcup.worldCup.modules.simulations.participatingParty.entity.ParticipatingParty;
 
 import java.util.List;
 

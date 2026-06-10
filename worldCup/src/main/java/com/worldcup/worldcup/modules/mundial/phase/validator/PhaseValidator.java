@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.mundial.phase.validator;
+package com.worldcup.worldCup.modules.mundial.phase.validator;
 
-import com.worldcup.worldcup.modules.mundial.phase.dto.PhaseDTO;
+import com.worldcup.worldCup.modules.mundial.phase.dto.PhaseDTO;
 import org.springframework.stereotype.Component;
 
 @Component

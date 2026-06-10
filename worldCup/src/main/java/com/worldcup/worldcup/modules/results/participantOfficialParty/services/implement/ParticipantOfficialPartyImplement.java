@@ -1,15 +1,15 @@
-package com.worldcup.worldcup.modules.results.participantOfficialParty.services.implement;
+package com.worldcup.worldCup.modules.results.participantOfficialParty.services.implement;
 
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
-import com.worldcup.worldcup.modules.mundial.team.repository.TeamRepository;
-import com.worldcup.worldcup.modules.results.oficialMatches.entity.OficialMatch;
-import com.worldcup.worldcup.modules.results.oficialMatches.repository.OficialMatchRepository;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.dto.ParticipantOfficialPartyDTO;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.entity.ParticipantOfficialParty;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.mapper.ParticipantOfficialPartyMapper;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.repository.ParticipantOfficialPartyRepository;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.services.interfaces.IParticipantOfficialParty;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.validator.ParticipantOfficialPartyValidator;
+import com.worldcup.worldCup.modules.mundial.team.entity.Team;
+import com.worldcup.worldCup.modules.mundial.team.repository.TeamRepository;
+import com.worldcup.worldCup.modules.results.oficialMatches.entity.OficialMatch;
+import com.worldcup.worldCup.modules.results.oficialMatches.repository.OficialMatchRepository;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.dto.ParticipantOfficialPartyDTO;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.entity.ParticipantOfficialParty;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.mapper.ParticipantOfficialPartyMapper;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.repository.ParticipantOfficialPartyRepository;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.services.interfaces.IParticipantOfficialParty;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.validator.ParticipantOfficialPartyValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

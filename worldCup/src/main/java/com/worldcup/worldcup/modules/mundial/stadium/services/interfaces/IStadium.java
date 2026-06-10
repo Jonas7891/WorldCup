@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.mundial.stadium.services.interfaces;
+package com.worldcup.worldCup.modules.mundial.stadium.services.interfaces;
 
-import com.worldcup.worldcup.modules.mundial.stadium.dto.StadiumDTO;
-import com.worldcup.worldcup.modules.mundial.stadium.entity.Stadium;
+import com.worldcup.worldCup.modules.mundial.stadium.dto.StadiumDTO;
+import com.worldcup.worldCup.modules.mundial.stadium.entity.Stadium;
 import java.util.List;
 
 public interface IStadium {

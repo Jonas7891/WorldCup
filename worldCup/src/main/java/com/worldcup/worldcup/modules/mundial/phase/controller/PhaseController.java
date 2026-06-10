@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.mundial.phase.controller;
+package com.worldcup.worldCup.modules.mundial.phase.controller;
 
-import com.worldcup.worldcup.modules.mundial.phase.dto.PhaseDTO;
-import com.worldcup.worldcup.modules.mundial.phase.entity.Phase;
-import com.worldcup.worldcup.modules.mundial.phase.services.interfaces.IPhase;
+import com.worldcup.worldCup.modules.mundial.phase.dto.PhaseDTO;
+import com.worldcup.worldCup.modules.mundial.phase.entity.Phase;
+import com.worldcup.worldCup.modules.mundial.phase.services.interfaces.IPhase;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,12 +1,12 @@
-package com.worldcup.worldcup.modules.simulations.simulation.services.implement;
+package com.worldcup.worldCup.modules.simulations.simulation.services.implement;
 
-import com.worldcup.worldcup.modules.simulations.simulation.dto.SimulationDTO;
-import com.worldcup.worldcup.modules.simulations.simulation.entity.EnumSimulation;
-import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
-import com.worldcup.worldcup.modules.simulations.simulation.mapper.SimulationMapper;
-import com.worldcup.worldcup.modules.simulations.simulation.repository.SimulationRepository;
-import com.worldcup.worldcup.modules.simulations.simulation.services.interfaces.ISimulation;
-import com.worldcup.worldcup.modules.simulations.simulation.validator.SimulationValidator;
+import com.worldcup.worldCup.modules.simulations.simulation.dto.SimulationDTO;
+import com.worldcup.worldCup.modules.simulations.simulation.entity.EnumSimulation;
+import com.worldcup.worldCup.modules.simulations.simulation.entity.Simulation;
+import com.worldcup.worldCup.modules.simulations.simulation.mapper.SimulationMapper;
+import com.worldcup.worldCup.modules.simulations.simulation.repository.SimulationRepository;
+import com.worldcup.worldCup.modules.simulations.simulation.services.interfaces.ISimulation;
+import com.worldcup.worldCup.modules.simulations.simulation.validator.SimulationValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

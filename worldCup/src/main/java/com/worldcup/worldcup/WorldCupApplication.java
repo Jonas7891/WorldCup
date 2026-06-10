@@ -1,4 +1,4 @@
-package com.worldcup.worldcup;
+package com.worldcup.worldCup;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

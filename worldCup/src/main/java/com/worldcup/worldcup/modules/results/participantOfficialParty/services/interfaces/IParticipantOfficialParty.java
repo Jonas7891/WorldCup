@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.results.participantOfficialParty.services.interfaces;
+package com.worldcup.worldCup.modules.results.participantOfficialParty.services.interfaces;
 
-import com.worldcup.worldcup.modules.results.participantOfficialParty.dto.ParticipantOfficialPartyDTO;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.entity.ParticipantOfficialParty;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.dto.ParticipantOfficialPartyDTO;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.entity.ParticipantOfficialParty;
 
 import java.util.List;
 

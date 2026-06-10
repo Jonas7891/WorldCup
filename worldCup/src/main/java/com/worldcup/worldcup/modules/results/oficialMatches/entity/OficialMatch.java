@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.results.oficialMatches.entity;
+package com.worldcup.worldCup.modules.results.oficialMatches.entity;
 
-import com.worldcup.worldcup.modules.mundial.phase.entity.Phase;
-import com.worldcup.worldcup.modules.mundial.stadium.entity.Stadium;
-import com.worldcup.worldcup.modules.results.oficialMatches.enums.OficialMatchStatus;
+import com.worldcup.worldCup.modules.mundial.phase.entity.Phase;
+import com.worldcup.worldCup.modules.mundial.stadium.entity.Stadium;
+import com.worldcup.worldCup.modules.results.oficialMatches.enums.OficialMatchStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

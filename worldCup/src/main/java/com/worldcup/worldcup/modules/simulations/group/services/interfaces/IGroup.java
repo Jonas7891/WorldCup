@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.simulations.group.services.interfaces;
+package com.worldcup.worldCup.modules.simulations.group.services.interfaces;
 
-import com.worldcup.worldcup.modules.simulations.group.dto.GroupDTO;
-import com.worldcup.worldcup.modules.simulations.group.entity.Group;
+import com.worldcup.worldCup.modules.simulations.group.dto.GroupDTO;
+import com.worldcup.worldCup.modules.simulations.group.entity.Group;
 
 import java.util.List;
 

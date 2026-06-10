@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.mundial.team.controller;
+package com.worldcup.worldCup.modules.mundial.team.controller;
 
-import com.worldcup.worldcup.modules.mundial.team.dto.TeamDTO;
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
-import com.worldcup.worldcup.modules.mundial.team.services.interfaces.ITeam;
+import com.worldcup.worldCup.modules.mundial.team.dto.TeamDTO;
+import com.worldcup.worldCup.modules.mundial.team.entity.Team;
+import com.worldcup.worldCup.modules.mundial.team.services.interfaces.ITeam;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

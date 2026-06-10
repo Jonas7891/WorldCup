@@ -1,13 +1,13 @@
-package com.worldcup.worldcup.modules.simulations.match.mapper;
+package com.worldcup.worldCup.modules.simulations.match.mapper;
 
-import com.worldcup.worldcup.modules.mundial.phase.entity.Phase;
-import com.worldcup.worldcup.modules.mundial.phase.repository.PhaseRepository;
-import com.worldcup.worldcup.modules.mundial.stadium.entity.Stadium;
-import com.worldcup.worldcup.modules.mundial.stadium.repository.StadiumRepository;
-import com.worldcup.worldcup.modules.simulations.match.dto.MatchDTO;
-import com.worldcup.worldcup.modules.simulations.match.entity.Match;
-import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
-import com.worldcup.worldcup.modules.simulations.simulation.repository.SimulationRepository;
+import com.worldcup.worldCup.modules.mundial.phase.entity.Phase;
+import com.worldcup.worldCup.modules.mundial.phase.repository.PhaseRepository;
+import com.worldcup.worldCup.modules.mundial.stadium.entity.Stadium;
+import com.worldcup.worldCup.modules.mundial.stadium.repository.StadiumRepository;
+import com.worldcup.worldCup.modules.simulations.match.dto.MatchDTO;
+import com.worldcup.worldCup.modules.simulations.match.entity.Match;
+import com.worldcup.worldCup.modules.simulations.simulation.entity.Simulation;
+import com.worldcup.worldCup.modules.simulations.simulation.repository.SimulationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

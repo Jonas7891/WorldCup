@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.mundial.phase.services.interfaces;
+package com.worldcup.worldCup.modules.mundial.phase.services.interfaces;
 
-import com.worldcup.worldcup.modules.mundial.phase.dto.PhaseDTO;
-import com.worldcup.worldcup.modules.mundial.phase.entity.Phase;
+import com.worldcup.worldCup.modules.mundial.phase.dto.PhaseDTO;
+import com.worldcup.worldCup.modules.mundial.phase.entity.Phase;
 
 import java.util.List;
 

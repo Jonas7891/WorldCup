@@ -1,11 +1,11 @@
-package com.worldcup.worldcup.modules.simulations.group.services.implement;
+package com.worldcup.worldCup.modules.simulations.group.services.implement;
 
-import com.worldcup.worldcup.modules.simulations.group.dto.GroupDTO;
-import com.worldcup.worldcup.modules.simulations.group.entity.Group;
-import com.worldcup.worldcup.modules.simulations.group.mapper.GroupMapper;
-import com.worldcup.worldcup.modules.simulations.group.repository.GroupRepository;
-import com.worldcup.worldcup.modules.simulations.group.services.interfaces.IGroup;
-import com.worldcup.worldcup.modules.simulations.group.validator.GroupValidator;
+import com.worldcup.worldCup.modules.simulations.group.dto.GroupDTO;
+import com.worldcup.worldCup.modules.simulations.group.entity.Group;
+import com.worldcup.worldCup.modules.simulations.group.mapper.GroupMapper;
+import com.worldcup.worldCup.modules.simulations.group.repository.GroupRepository;
+import com.worldcup.worldCup.modules.simulations.group.services.interfaces.IGroup;
+import com.worldcup.worldCup.modules.simulations.group.validator.GroupValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

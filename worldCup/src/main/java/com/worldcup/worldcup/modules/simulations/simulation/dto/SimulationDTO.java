@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.simulations.simulation.dto;
+package com.worldcup.worldCup.modules.simulations.simulation.dto;
 
-import com.worldcup.worldcup.modules.simulations.simulation.entity.EnumSimulation;
+import com.worldcup.worldCup.modules.simulations.simulation.entity.EnumSimulation;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

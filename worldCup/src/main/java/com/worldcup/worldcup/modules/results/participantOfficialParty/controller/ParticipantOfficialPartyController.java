@@ -1,9 +1,9 @@
-package com.worldcup.worldcup.modules.results.participantOfficialParty.controller;
+package com.worldcup.worldCup.modules.results.participantOfficialParty.controller;
 
-import com.worldcup.worldcup.modules.results.participantOfficialParty.dto.ParticipantOfficialPartyDTO;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.entity.ParticipantOfficialParty;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.mapper.ParticipantOfficialPartyMapper;
-import com.worldcup.worldcup.modules.results.participantOfficialParty.services.interfaces.IParticipantOfficialParty;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.dto.ParticipantOfficialPartyDTO;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.entity.ParticipantOfficialParty;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.mapper.ParticipantOfficialPartyMapper;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.services.interfaces.IParticipantOfficialParty;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

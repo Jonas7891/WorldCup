@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.results.participantOfficialParty.validator;
+package com.worldcup.worldCup.modules.results.participantOfficialParty.validator;
 
-import com.worldcup.worldcup.modules.results.participantOfficialParty.dto.ParticipantOfficialPartyDTO;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.dto.ParticipantOfficialPartyDTO;
 import org.springframework.stereotype.Component;
 
 @Component

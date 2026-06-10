@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.mundial.phase.mapper;
+package com.worldcup.worldCup.modules.mundial.phase.mapper;
 
-import com.worldcup.worldcup.modules.mundial.phase.dto.PhaseDTO;
-import com.worldcup.worldcup.modules.mundial.phase.entity.Phase;
+import com.worldcup.worldCup.modules.mundial.phase.dto.PhaseDTO;
+import com.worldcup.worldCup.modules.mundial.phase.entity.Phase;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.simulations.match.controller;
+package com.worldcup.worldCup.modules.simulations.match.controller;
 
-import com.worldcup.worldcup.modules.simulations.match.dto.MatchDTO;
-import com.worldcup.worldcup.modules.simulations.match.entity.Match;
-import com.worldcup.worldcup.modules.simulations.match.services.interfaces.IMatch;
+import com.worldcup.worldCup.modules.simulations.match.dto.MatchDTO;
+import com.worldcup.worldCup.modules.simulations.match.entity.Match;
+import com.worldcup.worldCup.modules.simulations.match.services.interfaces.IMatch;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

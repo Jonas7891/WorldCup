@@ -1,14 +1,14 @@
-package com.worldcup.worldcup.modules.results.participantOfficialParty.entity;
+package com.worldcup.worldCup.modules.results.participantOfficialParty.entity;
 
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
-import com.worldcup.worldcup.modules.results.oficialMatches.entity.OficialMatch;
+import com.worldcup.worldCup.modules.mundial.team.entity.Team;
+import com.worldcup.worldCup.modules.results.oficialMatches.entity.OficialMatch;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "participant_official_party")
 @Table(name = "participant_official_party")
 @Data
 @Builder

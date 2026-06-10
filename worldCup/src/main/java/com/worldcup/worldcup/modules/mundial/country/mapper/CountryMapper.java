@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.mundial.country.mapper;
+package com.worldcup.worldCup.modules.mundial.country.mapper;
 
-import com.worldcup.worldcup.modules.mundial.country.dto.CountryDTO;
-import com.worldcup.worldcup.modules.mundial.country.entity.Country;
+import com.worldcup.worldCup.modules.mundial.country.dto.CountryDTO;
+import com.worldcup.worldCup.modules.mundial.country.entity.Country;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.simulations.match.dto;
+package com.worldcup.worldCup.modules.simulations.match.dto;
 
-import com.worldcup.worldcup.modules.simulations.match.entity.EnumMatch;
+import com.worldcup.worldCup.modules.simulations.match.entity.EnumMatch;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

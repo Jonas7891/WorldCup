@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.simulations.group.entity;
+package com.worldcup.worldCup.modules.simulations.group.entity;
 
-import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
+import com.worldcup.worldCup.modules.simulations.simulation.entity.Simulation;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

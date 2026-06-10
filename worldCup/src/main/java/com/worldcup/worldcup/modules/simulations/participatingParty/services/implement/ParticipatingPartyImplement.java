@@ -1,15 +1,15 @@
-package com.worldcup.worldcup.modules.simulations.participatingParty.services.implement;
+package com.worldcup.worldCup.modules.simulations.participatingParty.services.implement;
 
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
-import com.worldcup.worldcup.modules.mundial.team.repository.TeamRepository;
-import com.worldcup.worldcup.modules.simulations.match.entity.Match;
-import com.worldcup.worldcup.modules.simulations.match.repository.MatchRepository;
-import com.worldcup.worldcup.modules.simulations.participatingParty.dto.ParticipatingPartyDTO;
-import com.worldcup.worldcup.modules.simulations.participatingParty.entity.ParticipatingParty;
-import com.worldcup.worldcup.modules.simulations.participatingParty.mapper.ParticipatingPartyMapper;
-import com.worldcup.worldcup.modules.simulations.participatingParty.repository.ParticipatingPartyRepository;
-import com.worldcup.worldcup.modules.simulations.participatingParty.services.interfaces.IParticipatingParty;
-import com.worldcup.worldcup.modules.simulations.participatingParty.validator.ParticipatingPartyValidator;
+import com.worldcup.worldCup.modules.mundial.team.entity.Team;
+import com.worldcup.worldCup.modules.mundial.team.repository.TeamRepository;
+import com.worldcup.worldCup.modules.simulations.match.entity.Match;
+import com.worldcup.worldCup.modules.simulations.match.repository.MatchRepository;
+import com.worldcup.worldCup.modules.simulations.participatingParty.dto.ParticipatingPartyDTO;
+import com.worldcup.worldCup.modules.simulations.participatingParty.entity.ParticipatingParty;
+import com.worldcup.worldCup.modules.simulations.participatingParty.mapper.ParticipatingPartyMapper;
+import com.worldcup.worldCup.modules.simulations.participatingParty.repository.ParticipatingPartyRepository;
+import com.worldcup.worldCup.modules.simulations.participatingParty.services.interfaces.IParticipatingParty;
+import com.worldcup.worldCup.modules.simulations.participatingParty.validator.ParticipatingPartyValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.simulations.match.validator;
+package com.worldcup.worldCup.modules.simulations.match.validator;
 
-import com.worldcup.worldcup.modules.simulations.match.dto.MatchDTO;
+import com.worldcup.worldCup.modules.simulations.match.dto.MatchDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;

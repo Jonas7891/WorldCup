@@ -1,9 +1,9 @@
-package com.worldcup.worldcup.modules.simulations.participatingParty.controller;
+package com.worldcup.worldCup.modules.simulations.participatingParty.controller;
 
-import com.worldcup.worldcup.modules.simulations.participatingParty.dto.ParticipatingPartyDTO;
-import com.worldcup.worldcup.modules.simulations.participatingParty.entity.ParticipatingParty;
-import com.worldcup.worldcup.modules.simulations.participatingParty.mapper.ParticipatingPartyMapper;
-import com.worldcup.worldcup.modules.simulations.participatingParty.services.interfaces.IParticipatingParty;
+import com.worldcup.worldCup.modules.simulations.participatingParty.dto.ParticipatingPartyDTO;
+import com.worldcup.worldCup.modules.simulations.participatingParty.entity.ParticipatingParty;
+import com.worldcup.worldCup.modules.simulations.participatingParty.mapper.ParticipatingPartyMapper;
+import com.worldcup.worldCup.modules.simulations.participatingParty.services.interfaces.IParticipatingParty;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

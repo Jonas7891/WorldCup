@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.simulations.participatingParty.entity;
+package com.worldcup.worldCup.modules.simulations.participatingParty.entity;
 
 public enum EnumParticipatingPartyResult {
     GANADOR,

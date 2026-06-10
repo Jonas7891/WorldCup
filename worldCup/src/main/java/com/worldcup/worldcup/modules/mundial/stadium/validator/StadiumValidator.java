@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.mundial.stadium.validator;
+package com.worldcup.worldCup.modules.mundial.stadium.validator;
 
-import com.worldcup.worldcup.modules.mundial.stadium.dto.StadiumDTO;
+import com.worldcup.worldCup.modules.mundial.stadium.dto.StadiumDTO;
 import org.springframework.stereotype.Component;
 
 @Component

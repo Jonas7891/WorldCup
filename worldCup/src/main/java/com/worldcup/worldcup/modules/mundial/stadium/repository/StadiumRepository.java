@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.mundial.stadium.repository;
+package com.worldcup.worldCup.modules.mundial.stadium.repository;
 
-import com.worldcup.worldcup.modules.mundial.stadium.entity.Stadium;
+import com.worldcup.worldCup.modules.mundial.stadium.entity.Stadium;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

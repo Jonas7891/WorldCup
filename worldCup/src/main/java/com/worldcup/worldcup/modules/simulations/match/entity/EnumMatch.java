@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.simulations.match.entity;
+package com.worldcup.worldCup.modules.simulations.match.entity;
 
 public enum EnumMatch {
     PENDING,

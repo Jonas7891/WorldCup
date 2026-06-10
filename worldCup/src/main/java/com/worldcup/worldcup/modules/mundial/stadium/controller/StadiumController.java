@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.mundial.stadium.controller;
+package com.worldcup.worldCup.modules.mundial.stadium.controller;
 
-import com.worldcup.worldcup.modules.mundial.stadium.dto.StadiumDTO;
-import com.worldcup.worldcup.modules.mundial.stadium.entity.Stadium;
-import com.worldcup.worldcup.modules.mundial.stadium.services.interfaces.IStadium;
+import com.worldcup.worldCup.modules.mundial.stadium.dto.StadiumDTO;
+import com.worldcup.worldCup.modules.mundial.stadium.entity.Stadium;
+import com.worldcup.worldCup.modules.mundial.stadium.services.interfaces.IStadium;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.mundial.team.repository;
+package com.worldcup.worldCup.modules.mundial.team.repository;
 
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
+import com.worldcup.worldCup.modules.mundial.team.entity.Team;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.JpaRepository;

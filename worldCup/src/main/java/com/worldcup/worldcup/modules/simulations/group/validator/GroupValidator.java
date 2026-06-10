@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.simulations.group.validator;
+package com.worldcup.worldCup.modules.simulations.group.validator;
 
-import com.worldcup.worldcup.modules.simulations.group.dto.GroupDTO;
+import com.worldcup.worldCup.modules.simulations.group.dto.GroupDTO;
 import org.springframework.stereotype.Component;
 
 @Component

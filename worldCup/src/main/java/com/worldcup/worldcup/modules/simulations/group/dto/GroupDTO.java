@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.simulations.group.dto;
+package com.worldcup.worldCup.modules.simulations.group.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

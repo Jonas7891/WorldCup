@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.simulations.teamSimulation.repository;
+package com.worldcup.worldCup.modules.simulations.teamSimulation.repository;
 
-import com.worldcup.worldcup.modules.simulations.teamSimulation.entity.TeamSimulation;
+import com.worldcup.worldCup.modules.simulations.teamSimulation.entity.TeamSimulation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

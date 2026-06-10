@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.results.participantOfficialParty.repository;
+package com.worldcup.worldCup.modules.results.participantOfficialParty.repository;
 
-import com.worldcup.worldcup.modules.results.participantOfficialParty.entity.ParticipantOfficialParty;
+import com.worldcup.worldCup.modules.results.participantOfficialParty.entity.ParticipantOfficialParty;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

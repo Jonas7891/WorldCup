@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.mundial.stadium.mapper;
+package com.worldcup.worldCup.modules.mundial.stadium.mapper;
 
-import com.worldcup.worldcup.modules.mundial.stadium.dto.StadiumDTO;
-import com.worldcup.worldcup.modules.mundial.stadium.entity.Stadium;
+import com.worldcup.worldCup.modules.mundial.stadium.dto.StadiumDTO;
+import com.worldcup.worldCup.modules.mundial.stadium.entity.Stadium;
 import org.springframework.stereotype.Component;
 
 @Component

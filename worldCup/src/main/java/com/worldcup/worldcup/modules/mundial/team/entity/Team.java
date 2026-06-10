@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.mundial.team.entity;
+package com.worldcup.worldCup.modules.mundial.team.entity;
 
-import com.worldcup.worldcup.modules.mundial.country.entity.Country;
-import com.worldcup.worldcup.modules.simulations.group.entity.Group;
+import com.worldcup.worldCup.modules.mundial.country.entity.Country;
+import com.worldcup.worldCup.modules.simulations.group.entity.Group;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

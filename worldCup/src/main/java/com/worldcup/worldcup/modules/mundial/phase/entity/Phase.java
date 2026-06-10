@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.mundial.phase.entity;
+package com.worldcup.worldCup.modules.mundial.phase.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

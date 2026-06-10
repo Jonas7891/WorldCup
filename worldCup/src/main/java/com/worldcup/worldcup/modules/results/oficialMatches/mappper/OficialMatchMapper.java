@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.results.oficialMatches.mappper;
+package com.worldcup.worldCup.modules.results.oficialMatches.mappper;
 
-import com.worldcup.worldcup.modules.results.oficialMatches.dto.response.OficialMatchResponse;
-import com.worldcup.worldcup.modules.results.oficialMatches.entity.OficialMatch;
+import com.worldcup.worldCup.modules.results.oficialMatches.dto.response.OficialMatchResponse;
+import com.worldcup.worldCup.modules.results.oficialMatches.entity.OficialMatch;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

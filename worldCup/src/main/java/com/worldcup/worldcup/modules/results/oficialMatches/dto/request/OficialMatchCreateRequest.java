@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.results.oficialMatches.dto.request;
+package com.worldcup.worldCup.modules.results.oficialMatches.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

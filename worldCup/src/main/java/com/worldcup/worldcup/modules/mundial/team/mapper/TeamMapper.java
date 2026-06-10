@@ -1,7 +1,7 @@
-package com.worldcup.worldcup.modules.mundial.team.mapper;
+package com.worldcup.worldCup.modules.mundial.team.mapper;
 
-import com.worldcup.worldcup.modules.mundial.team.dto.TeamDTO;
-import com.worldcup.worldcup.modules.mundial.team.entity.Team;
+import com.worldcup.worldCup.modules.mundial.team.dto.TeamDTO;
+import com.worldcup.worldCup.modules.mundial.team.entity.Team;
 import org.springframework.stereotype.Component;
 
 @Component
