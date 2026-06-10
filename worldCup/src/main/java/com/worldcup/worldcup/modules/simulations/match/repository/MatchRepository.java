@@ -7,10 +7,8 @@ import org.springframework.data.repository.query.Param;
 
 public interface MatchRepository extends JpaRepository<Match, Integer>{
 
-	// Find only active teams (status = true)
 	java.util.List<Match> findByStatusTrue();
 
-	// Check if team with given name already exists
 	@Query("SELECT CASE WHEN COUNT(t) > 0 THEN true ELSE false END FROM team t WHERE t.name = :name")
 	boolean existsByName(@Param("name") String name);
 

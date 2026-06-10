@@ -1,5 +1,9 @@
 package com.worldcup.worldcup.modules.simulations.match.services.implement;
 
+import com.worldcup.worldcup.modules.mundial.phase.entity.Phase;
+import com.worldcup.worldcup.modules.mundial.phase.repository.PhaseRepository;
+import com.worldcup.worldcup.modules.mundial.stadium.entity.Stadium;
+import com.worldcup.worldcup.modules.mundial.stadium.repository.StadiumRepository;
 import com.worldcup.worldcup.modules.simulations.match.dto.MatchDTO;
 import com.worldcup.worldcup.modules.simulations.match.entity.EnumMatch;
 import com.worldcup.worldcup.modules.simulations.match.entity.Match;
@@ -7,6 +11,8 @@ import com.worldcup.worldcup.modules.simulations.match.mapper.MatchMapper;
 import com.worldcup.worldcup.modules.simulations.match.repository.MatchRepository;
 import com.worldcup.worldcup.modules.simulations.match.services.interfaces.IMatch;
 import com.worldcup.worldcup.modules.simulations.match.validator.MatchValidator;
+import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
+import com.worldcup.worldcup.modules.simulations.simulation.repository.SimulationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -26,6 +32,15 @@ public class MatchImplement implements IMatch {
 
     @Autowired
     private MatchValidator matchValidator;
+
+    @Autowired
+    private SimulationRepository simulationRepository;
+
+    @Autowired
+    private PhaseRepository phaseRepository;
+
+    @Autowired
+    private StadiumRepository stadiumRepository;
 
     @Override
     public String Create(MatchDTO matchDTO){
@@ -94,13 +109,16 @@ public class MatchImplement implements IMatch {
             Match match = matchExistente.get();
 
             if (matchDTO.getId_simulation() != null && matchDTO.getId_simulation() > 0) {
-                match.setId_simulation(matchDTO.getId_simulation());
+                Simulation simulation = simulationRepository.findById(matchDTO.getId_simulation()).orElse(null);
+                match.setSimulation(simulation);
             }
             if (matchDTO.getId_phase() != null && matchDTO.getId_phase() > 0) {
-                match.setId_phase(matchDTO.getId_phase());
+                Phase phase = phaseRepository.findById(matchDTO.getId_phase()).orElse(null);
+                match.setPhase(phase);
             }
             if (matchDTO.getId_stadium() != null && matchDTO.getId_stadium() > 0) {
-                match.setId_stadium(matchDTO.getId_stadium());
+                Stadium stadium = stadiumRepository.findById(matchDTO.getId_stadium()).orElse(null);
+                match.setStadium(stadium);
             }
             if (matchDTO.getMatchDate() != null) {
                 match.setMatch_date(matchDTO.getMatchDate());
@@ -128,13 +146,16 @@ public class MatchImplement implements IMatch {
             Match match = matchExistente.get();
 
             if (matchDTO.getId_simulation() != null && matchDTO.getId_simulation() > 0) {
-                match.setId_simulation(matchDTO.getId_simulation());
+                Simulation simulation = simulationRepository.findById(matchDTO.getId_simulation()).orElse(null);
+                match.setSimulation(simulation);
             }
             if (matchDTO.getId_phase() != null && matchDTO.getId_phase() > 0) {
-                match.setId_phase(matchDTO.getId_phase());
+                Phase phase = phaseRepository.findById(matchDTO.getId_phase()).orElse(null);
+                match.setPhase(phase);
             }
             if (matchDTO.getId_stadium() != null && matchDTO.getId_stadium() > 0) {
-                match.setId_stadium(matchDTO.getId_stadium());
+                Stadium stadium = stadiumRepository.findById(matchDTO.getId_stadium()).orElse(null);
+                match.setStadium(stadium);
             }
             if (matchDTO.getMatchDate() != null) {
                 match.setMatch_date(matchDTO.getMatchDate());

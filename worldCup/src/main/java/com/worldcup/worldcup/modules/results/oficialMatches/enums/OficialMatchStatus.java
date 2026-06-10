@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.results.enums;
+package com.worldcup.worldcup.modules.results.oficialMatches.enums;
 
 public enum OficialMatchStatus {
     EARRING,

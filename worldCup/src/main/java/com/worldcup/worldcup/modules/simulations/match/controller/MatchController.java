@@ -12,7 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/groups")
+@RequestMapping("/api/matches")
 public class MatchController {
 	private final IMatch service;
 
@@ -55,8 +55,8 @@ public class MatchController {
 	public ResponseEntity<String> logicalDelete(@PathVariable Integer id) {
 		boolean result = service.LogicalDelete(id);
 		if (result) {
-			return ResponseEntity.ok("Grupo eliminado lógicamente");
+			return ResponseEntity.ok("Partido eliminado lógicamente");
 		}
-		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No se pudo eliminar el grupo lógicamente");
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No se pudo eliminar el partido lógicamente");
 	}
 }

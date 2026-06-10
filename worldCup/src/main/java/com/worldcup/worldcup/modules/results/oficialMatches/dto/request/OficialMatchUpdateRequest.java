@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.results.dto.request;
+package com.worldcup.worldcup.modules.results.oficialMatches.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,13 +9,11 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+public class OficialMatchUpdateRequest {
 
-public class OficialMatchCreateRequest {
-
-    private Long id_phase;
+    private LocalDateTime date;
 
     private Long id_stadium;
 
-    private LocalDateTime date;
 
 }
