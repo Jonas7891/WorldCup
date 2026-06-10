@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name="phase")
+@Table(name="phase")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,7 +19,7 @@ public class Phase {
     @Column(name="id_phase", nullable = false)
     private Integer id_phase;
 
-    @Column(name="name", length = 50, nullable = false)
+    @Column(name="name", length = 50, nullable = false, unique = true)
     private String name;
 
     @Column(name="phase_order", nullable = false)

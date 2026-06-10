@@ -13,7 +13,8 @@ import lombok.Setter;
 public class CountryDTO {
     private Integer id_country;
     private String name_country;
-    private Integer ranking_fifa;
+    private String fifa_code;
     private String continent;
+    private Integer ranking_fifa;
     private Boolean status;
 }

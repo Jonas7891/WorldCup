@@ -7,11 +7,12 @@ import org.springframework.data.repository.query.Param;
 
 public interface GroupRepository extends JpaRepository<Group, Integer>{
 
-	// Find only active teams (status = true)
-	java.util.List<Group> findByStatusTrue();
+	java.util.List<Group> findByStatus(Boolean status);
 
-	// Check if team with given name already exists
-	@Query("SELECT CASE WHEN COUNT(t) > 0 THEN true ELSE false END FROM team t WHERE t.name = :name")
+	@Query("SELECT g FROM group g WHERE g.simulation.id_simulation = :simulation_id")
+	java.util.List<Group> findBySimulationId(@Param("simulation_id") Integer simulation_id);
+
+	@Query("SELECT CASE WHEN COUNT(g) > 0 THEN true ELSE false END FROM group g WHERE g.name = :name")
 	boolean existsByName(@Param("name") String name);
 
 }

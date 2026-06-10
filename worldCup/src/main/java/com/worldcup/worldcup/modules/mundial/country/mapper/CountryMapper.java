@@ -13,8 +13,9 @@ public class CountryMapper {
         CountryDTO countryDTO = new CountryDTO();
         countryDTO.setId_country(country.getId_country());
         countryDTO.setName_country(country.getName_country());
-        countryDTO.setRanking_fifa(country.getRanking_fifa());
+        countryDTO.setFifa_code(country.getFifa_code());
         countryDTO.setContinent(country.getContinent());
+        countryDTO.setRanking_fifa(country.getRanking_fifa());
         countryDTO.setStatus(country.getStatus());
 
         return countryDTO;
@@ -26,15 +27,15 @@ public class CountryMapper {
         }
 
         Country country = new Country();
-        // Only set id if provided; for creations id may be null
         if (countryDTO.getId_country() != null) {
             country.setId_country(countryDTO.getId_country());
         } else {
             country.setId_country(null);
         }
         country.setName_country(countryDTO.getName_country());
-        country.setRanking_fifa(countryDTO.getRanking_fifa());
+        country.setFifa_code(countryDTO.getFifa_code());
         country.setContinent(countryDTO.getContinent());
+        country.setRanking_fifa(countryDTO.getRanking_fifa());
         country.setStatus(countryDTO.getStatus());
 
         return country;

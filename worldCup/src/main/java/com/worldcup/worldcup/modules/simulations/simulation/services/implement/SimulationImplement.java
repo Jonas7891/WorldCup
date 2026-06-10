@@ -63,7 +63,7 @@ public class SimulationImplement implements ISimulation {
     @Override
     public List<Simulation> GetAll() {
         try {
-                return simulationRepository.findByStatusTrue();
+                return simulationRepository.findAll();
         } catch (Exception e) {
             throw new RuntimeException("Error al obtener los simuladores: " + e.getMessage());
         }
@@ -95,17 +95,17 @@ public class SimulationImplement implements ISimulation {
                 throw new RuntimeException("Simulación no encontrado con ID: " + simulationId);
             }
 
-            Simulation simulation = simulationExistente.get();
-            if (!simulation.getName().equals(simulationDTO.getName()) &&
-                simulationRepository.existsByName(simulationDTO.getName())) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "La simulación con ese nombre ya existe: " + simulationDTO.getName());
-            }
+             Simulation simulation = simulationExistente.get();
+             if (!simulation.getName().equals(simulationDTO.getName()) &&
+                 simulationRepository.existsByName(simulationDTO.getName())) {
+                 throw new ResponseStatusException(HttpStatus.CONFLICT, "La simulación con ese nombre ya existe: " + simulationDTO.getName());
+             }
 
-            simulation.setName(simulationDTO.getName());
-            simulation.setId_simulation(simulationDTO.getId_simulation());
-            if (simulationDTO.getStatus() != null) {
-                simulation.setStatus(simulationDTO.getStatus());
-            }
+             simulation.setName(simulationDTO.getName());
+             // Note: id_simulation is the primary key and should not be modified
+             if (simulationDTO.getStatus() != null) {
+                 simulation.setStatus(simulationDTO.getStatus());
+             }
 
             return simulationRepository.save(simulation);
         } catch (Exception e) {
@@ -123,20 +123,18 @@ public class SimulationImplement implements ISimulation {
                 throw new RuntimeException("Simulación no encontrado con ID: " + simulationId);
             }
 
-            Simulation simulation = simulationExistente.get();
-            if (simulationDTO.getName() != null) {
-                if (!simulation.getName().equals(simulationDTO.getName()) &&
-                    simulationRepository.existsByName(simulationDTO.getName())) {
-                    throw new ResponseStatusException(HttpStatus.CONFLICT, "La simulación con ese nombre ya existe: " + simulationDTO.getName());
-                }
-                simulation.setName(simulationDTO.getName());
-            }
-            if (simulationDTO.getId_simulation() > 0) {
-                simulation.setId_simulation(simulationDTO.getId_simulation());
-            }
-            if (simulationDTO.getStatus() != null) {
-                simulation.setStatus(simulationDTO.getStatus());
-            }
+             Simulation simulation = simulationExistente.get();
+             if (simulationDTO.getName() != null) {
+                 if (!simulation.getName().equals(simulationDTO.getName()) &&
+                     simulationRepository.existsByName(simulationDTO.getName())) {
+                     throw new ResponseStatusException(HttpStatus.CONFLICT, "La simulación con ese nombre ya existe: " + simulationDTO.getName());
+                 }
+                 simulation.setName(simulationDTO.getName());
+             }
+             // Note: id_simulation is the primary key and should not be modified
+             if (simulationDTO.getStatus() != null) {
+                 simulation.setStatus(simulationDTO.getStatus());
+             }
 
             return simulationRepository.save(simulation);
         } catch (Exception e) {

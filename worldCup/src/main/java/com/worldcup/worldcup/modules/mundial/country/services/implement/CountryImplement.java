@@ -35,12 +35,7 @@ public class CountryImplement implements ICountry {
             }
 
             Country country = countryMapper.toEntity(countryDTO);
-            // Ensure we don't accidentally update an existing row when creating: reset id to null
             country.setId_country(null);
-            // Check for duplicates by name before insert to avoid unique constraint exceptions
-            if (countryRepository.existsByName_country(country.getName_country())) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "El país con ese nombre ya existe: " + country.getName_country());
-            }
 
             try {
                 countryRepository.save(country);

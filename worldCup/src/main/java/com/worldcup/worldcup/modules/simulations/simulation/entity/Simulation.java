@@ -9,6 +9,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity(name="simulation")
+@Table(name="simulation")
 @Getter
 @Setter
 @AllArgsConstructor

@@ -1,5 +1,6 @@
 package com.worldcup.worldcup.modules.simulations.group.entity;
 
+import com.worldcup.worldcup.modules.simulations.simulation.entity.Simulation;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name="group")
+@Table(name="group")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,8 +23,9 @@ public class Group {
     @Column(name="name", length = 1, nullable = false)
     private String name;
 
-    @Column(name="id_simulation", nullable = false)
-    private int id_simulation;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_simulation", nullable = false)
+    private Simulation simulation;
 
     @Column(name="status", nullable = false)
     private Boolean status;

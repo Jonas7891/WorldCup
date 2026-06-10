@@ -14,8 +14,8 @@ public class TeamMapper {
         TeamDTO teamDTO = new TeamDTO();
         teamDTO.setId_team(team.getId_team());
         teamDTO.setName(team.getName());
-        teamDTO.setId_country(team.getId_country());
-        teamDTO.setId_group(team.getId_group());
+        teamDTO.setId_country(team.getCountry() != null ? team.getCountry().getId_country() : null);
+        teamDTO.setId_group(team.getGroup() != null ? team.getGroup().getId_group() : null);
         teamDTO.setStatus(team.getStatus());
 
         return teamDTO;
@@ -33,8 +33,6 @@ public class TeamMapper {
             team.setId_team(null);
         }
         team.setName(teamDTO.getName());
-        team.setId_country(teamDTO.getId_country());
-        team.setId_group(teamDTO.getId_group());
         team.setStatus(teamDTO.getStatus());
 
         return team;

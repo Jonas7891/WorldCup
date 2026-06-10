@@ -14,7 +14,7 @@ public class GroupMapper {
         GroupDTO groupDTO = new GroupDTO();
         groupDTO.setId_group(group.getId_group());
         groupDTO.setName(group.getName());
-        groupDTO.setId_group(group.getId_group());
+        groupDTO.setId_simulation(group.getSimulation() != null ? group.getSimulation().getId_simulation() : null);
         groupDTO.setStatus(group.getStatus());
 
         return groupDTO;
@@ -26,13 +26,13 @@ public class GroupMapper {
         }
 
         Group group = new Group();
-        if (groupDTO.getId_group()   != null) {
+        if (groupDTO.getId_group() != null) {
             group.setId_group(groupDTO.getId_group());
         } else {
             group.setId_group(null);
         }
         group.setName(groupDTO.getName());
-        group.setId_group(groupDTO.getId_group());
+        // Note: id_simulation is handled via Simulation entity relationship
         group.setStatus(groupDTO.getStatus());
 
         return group;

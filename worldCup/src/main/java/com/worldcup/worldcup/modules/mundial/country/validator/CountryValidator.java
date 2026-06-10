@@ -11,20 +11,20 @@ public class CountryValidator {
             return false;
         }
         if (countryDTO.getName_country() == null || countryDTO.getName_country().isEmpty() || countryDTO.getName_country().length() > 100) {
-            throw new IllegalArgumentException("El nombre del país no puede estar vacío y/o superar los 100 caracteres.");
+            throw new IllegalArgumentException("Country name cannot be empty and/or exceed 100 characters.");
         }
-        if (countryDTO.getRanking_fifa() == null || countryDTO.getRanking_fifa() <= 0) {
-            throw new IllegalArgumentException("La clasificación del país en la FIFA debe ser mayor que cero.");
+        if (countryDTO.getFifa_code() == null || countryDTO.getFifa_code().isEmpty() || countryDTO.getFifa_code().length() != 3) {
+            throw new IllegalArgumentException("FIFA code must be exactly 3 characters long.");
         }
         if (countryDTO.getContinent() == null || countryDTO.getContinent().isEmpty()) {
-            throw new IllegalArgumentException("El continente del país no puede estar vacío o ser nulo.");
+            throw new IllegalArgumentException("Country continent cannot be empty or null.");
         }
         return true;
     }
 
     public void validateCountryId(Integer countryId) {
         if (countryId == null || countryId <= 0) {
-            throw new IllegalArgumentException("El identificador del país debe ser mayor que cero.");
+            throw new IllegalArgumentException("Country ID must be greater than zero.");
         }
     }
 }

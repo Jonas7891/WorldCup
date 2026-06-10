@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name="stadium")
+@Table(name="stadium")
 @Getter
 @Setter
 @AllArgsConstructor

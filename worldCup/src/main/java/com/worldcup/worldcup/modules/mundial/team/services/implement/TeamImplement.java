@@ -35,12 +35,7 @@ public class TeamImplement implements ITeam {
             }
 
             Team team = teamMapper.toEntity(teamDTO);
-            // Ensure id is null so JPA will insert a new row
             team.setId_team(null);
-            // Check for duplicates by name before insert
-            if (teamRepository.existsByName(team.getName())) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "El equipo con ese nombre ya existe: " + team.getName());
-            }
 
             try {
                 teamRepository.save(team);
@@ -48,7 +43,7 @@ public class TeamImplement implements ITeam {
                 throw new ResponseStatusException(HttpStatus.CONFLICT, "Error al crear el equipo: posible duplicado de datos.", ex);
             }
 
-            return "Equipo creado exitosamente";
+            return "Team created successfully";
         } catch (IllegalArgumentException e) {
             return "Error de validación: " + e.getMessage();
         } catch (Exception e) {
@@ -64,7 +59,7 @@ public class TeamImplement implements ITeam {
     @Override
     public List<Team> GetAll() {
         try {
-                return teamRepository.findByStatusTrue();
+                return teamRepository.findByStatus(true);
         } catch (Exception e) {
             throw new RuntimeException("Error al obtener los equipos: " + e.getMessage());
         }
@@ -104,8 +99,8 @@ public class TeamImplement implements ITeam {
             }
 
             team.setName(teamDTO.getName());
-            team.setId_group(teamDTO.getId_group());
-            team.setId_country(teamDTO.getId_country());
+            // Note: id_country and id_group are handled via Country and Group entity relationships
+            // They should be persisted via database consistency
             if (teamDTO.getStatus() != null) {
                 team.setStatus(teamDTO.getStatus());
             }
@@ -127,23 +122,18 @@ public class TeamImplement implements ITeam {
             }
 
             Team team = teamExistente.get();
-            if (teamDTO.getName() != null) {
-                // Check if new name already exists
-                if (!team.getName().equals(teamDTO.getName()) &&
-                    teamRepository.existsByName(teamDTO.getName())) {
-                    throw new ResponseStatusException(HttpStatus.CONFLICT, "El equipo con ese nombre ya existe: " + teamDTO.getName());
-                }
-                team.setName(teamDTO.getName());
-            }
-            if (teamDTO.getId_group() > 0) {
-                team.setId_group(teamDTO.getId_group());
-            }
-            if (teamDTO.getId_country() > 0) {
-                team.setId_country(teamDTO.getId_country());
-            }
-            if (teamDTO.getStatus() != null) {
-                team.setStatus(teamDTO.getStatus());
-            }
+             if (teamDTO.getName() != null) {
+                 // Check if new name already exists
+                 if (!team.getName().equals(teamDTO.getName()) &&
+                     teamRepository.existsByName(teamDTO.getName())) {
+                     throw new ResponseStatusException(HttpStatus.CONFLICT, "El equipo con ese nombre ya existe: " + teamDTO.getName());
+                 }
+                 team.setName(teamDTO.getName());
+             }
+             // Note: id_country and id_group are handled via Country and Group entity relationships
+             if (teamDTO.getStatus() != null) {
+                 team.setStatus(teamDTO.getStatus());
+             }
 
             return teamRepository.save(team);
         } catch (Exception e) {

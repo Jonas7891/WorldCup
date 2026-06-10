@@ -7,11 +7,12 @@ import org.springframework.data.repository.query.Param;
 
 public interface SimulationRepository extends JpaRepository<Simulation, Integer>{
 
-	// Find only active teams (status = true)
-	java.util.List<Simulation> findByStatusTrue();
+	java.util.List<Simulation> findByStatusIn(java.util.List<com.worldcup.worldcup.modules.simulations.simulation.entity.EnumSimulation> statuses);
 
-	// Check if team with given name already exists
-	@Query("SELECT CASE WHEN COUNT(t) > 0 THEN true ELSE false END FROM team t WHERE t.name = :name")
+	@Query("SELECT s FROM simulation s WHERE s.id_user = :user_id")
+	java.util.List<Simulation> findByUserId(@Param("user_id") Integer user_id);
+
+	@Query("SELECT CASE WHEN COUNT(s) > 0 THEN true ELSE false END FROM simulation s WHERE s.name = :name")
 	boolean existsByName(@Param("name") String name);
 
 }

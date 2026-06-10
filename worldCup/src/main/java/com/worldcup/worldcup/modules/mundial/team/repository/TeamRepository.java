@@ -5,12 +5,18 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface TeamRepository extends JpaRepository<Team, Integer>{
 
-	// Find only active teams (status = true)
-	java.util.List<Team> findByStatusTrue();
+	List<Team> findByStatus(Boolean status);
 
-	// Check if team with given name already exists
+	@Query("SELECT t FROM team t WHERE t.country.id_country = :country_id")
+	List<Team> findByCountryId(@Param("country_id") Integer country_id);
+
+	@Query("SELECT t FROM team t WHERE t.group.id_group = :group_id")
+	List<Team> findByGroupId(@Param("group_id") Integer group_id);
+
 	@Query("SELECT CASE WHEN COUNT(t) > 0 THEN true ELSE false END FROM team t WHERE t.name = :name")
 	boolean existsByName(@Param("name") String name);
 

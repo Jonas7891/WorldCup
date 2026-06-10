@@ -36,9 +36,6 @@ public class GroupImplement implements IGroup {
 
             Group group = groupMapper.toEntity(groupDTO);
             group.setId_group(null);
-            if (groupRepository.existsByName(group.getName())) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "El grupo con ese nombre ya existe: " + group.getName());
-            }
 
             try {
                 groupRepository.save(group);
@@ -62,7 +59,7 @@ public class GroupImplement implements IGroup {
     @Override
     public List<Group> GetAll() {
         try {
-                return groupRepository.findByStatusTrue();
+                return groupRepository.findByStatus(true);
         } catch (Exception e) {
             throw new RuntimeException("Error al obtener los grupos: " + e.getMessage());
         }
@@ -94,17 +91,17 @@ public class GroupImplement implements IGroup {
                 throw new RuntimeException("Grupo no encontrado con ID: " + groupId);
             }
 
-            Group group = groupExistente.get();
-            if (!group.getName().equals(groupDTO.getName()) &&
-                groupRepository.existsByName(groupDTO.getName())) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "El grupo con ese nombre ya existe: " + groupDTO.getName());
-            }
+             Group group = groupExistente.get();
+             if (!group.getName().equals(groupDTO.getName()) &&
+                 groupRepository.existsByName(groupDTO.getName())) {
+                 throw new ResponseStatusException(HttpStatus.CONFLICT, "El grupo con ese nombre ya existe: " + groupDTO.getName());
+             }
 
-            group.setName(groupDTO.getName());
-            group.setId_group(groupDTO.getId_group());
-            if (groupDTO.getStatus() != null) {
-                group.setStatus(groupDTO.getStatus());
-            }
+             group.setName(groupDTO.getName());
+             // Note: id_simulation is handled via Simulation entity relationship
+             if (groupDTO.getStatus() != null) {
+                 group.setStatus(groupDTO.getStatus());
+             }
 
             return groupRepository.save(group);
         } catch (Exception e) {
@@ -122,20 +119,18 @@ public class GroupImplement implements IGroup {
                 throw new RuntimeException("Grupo no encontrado con ID: " + groupId);
             }
 
-            Group group = groupExistente.get();
-            if (groupDTO.getName() != null) {
-                if (!group.getName().equals(groupDTO.getName()) &&
-                    groupRepository.existsByName(groupDTO.getName())) {
-                    throw new ResponseStatusException(HttpStatus.CONFLICT, "El grupo con ese nombre ya existe: " + groupDTO.getName());
-                }
-                group.setName(groupDTO.getName());
-            }
-            if (groupDTO.getId_group() > 0) {
-                group.setId_group(groupDTO.getId_group());
-            }
-            if (groupDTO.getStatus() != null) {
-                group.setStatus(groupDTO.getStatus());
-            }
+             Group group = groupExistente.get();
+             if (groupDTO.getName() != null) {
+                 if (!group.getName().equals(groupDTO.getName()) &&
+                     groupRepository.existsByName(groupDTO.getName())) {
+                     throw new ResponseStatusException(HttpStatus.CONFLICT, "El grupo con ese nombre ya existe: " + groupDTO.getName());
+                 }
+                 group.setName(groupDTO.getName());
+             }
+             // Note: id_simulation is handled via Simulation entity relationship
+             if (groupDTO.getStatus() != null) {
+                 group.setStatus(groupDTO.getStatus());
+             }
 
             return groupRepository.save(group);
         } catch (Exception e) {

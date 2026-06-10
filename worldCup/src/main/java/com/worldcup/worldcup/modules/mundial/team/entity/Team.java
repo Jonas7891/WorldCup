@@ -1,5 +1,7 @@
 package com.worldcup.worldcup.modules.mundial.team.entity;
 
+import com.worldcup.worldcup.modules.mundial.country.entity.Country;
+import com.worldcup.worldcup.modules.simulations.group.entity.Group;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name="team")
+@Table(name="team")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,11 +24,13 @@ public class Team {
     @Column(name="name", length = 100, nullable = false)
     private String name;
 
-    @Column(name="id_country", nullable = false)
-    private int id_country;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_country", nullable = false)
+    private Country country;
 
-    @Column(name="id_group", nullable = false)
-    private int id_group;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_group", nullable = false)
+    private Group group;
 
     @Column(name="status", nullable = false)
     private Boolean status;
