@@ -1,0 +1,37 @@
+package com.worldcup.worldcup.modules.login.entity;
+
+import com.worldcup.worldcup.modules.login.entity.Role;
+import com.worldcup.worldcup.shared.entity.BaseEntity;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity(name="users")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class AppUser extends BaseEntity {
+
+    @Column(length=70, nullable = false)
+    private String firstName;
+
+    @Column(length=70, nullable = false)
+    private String lastName;
+
+    @Column (length=70, nullable = false)
+    private String mail;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles = new HashSet<>();
+}
