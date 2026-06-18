@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.login.entity;
+package com.worldcup.modules.login.entity;
 
-import com.worldcup.worldcup.shared.entity.BaseEntity;
+import com.worldcup.shared.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

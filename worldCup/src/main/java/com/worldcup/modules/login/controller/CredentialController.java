@@ -1,10 +1,10 @@
-package com.worldcup.worldcup.modules.login.controller;
+package com.worldcup.modules.login.controller;
 
-import com.worldcup.worldcup.modules.login.dto.credential.CredentialRequest;
-import com.worldcup.worldcup.modules.login.dto.credential.CredentialResponse;
-import com.worldcup.worldcup.modules.login.service.CredentialService;
-import com.worldcup.worldcup.shared.controller.BaseController;
-import com.worldcup.worldcup.shared.service.BaseService;
+import com.worldcup.modules.login.dto.credential.CredentialRequest;
+import com.worldcup.modules.login.dto.credential.CredentialResponse;
+import com.worldcup.modules.login.service.CredentialService;
+import com.worldcup.shared.controller.BaseController;
+import com.worldcup.shared.service.BaseService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

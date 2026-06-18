@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.login.dto.role;
+package com.worldcup.modules.login.dto.role;
 
 public record RoleResponse(
         Long id,

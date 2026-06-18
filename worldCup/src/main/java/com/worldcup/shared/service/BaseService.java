@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.shared.service;
+package com.worldcup.shared.service;
 
 import java.util.List;
 

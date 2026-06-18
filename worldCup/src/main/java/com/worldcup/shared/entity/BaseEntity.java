@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.shared.entity;
+package com.worldcup.shared.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

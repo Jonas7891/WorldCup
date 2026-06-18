@@ -1,4 +1,4 @@
-package com.worldcup.worldcup.modules.login.dto.user;
+package com.worldcup.modules.login.dto.user;
 
 import java.time.LocalDateTime;
 

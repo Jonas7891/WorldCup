@@ -13,7 +13,7 @@
     </parent>
 
     <groupId>com.worldcup</groupId>
-    <artifactId>worldCup</artifactId>
+    <artifactId>worldCup-Backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>worldCup</name>
     <description>Proyecto WorldCup</description>

@@ -1,9 +1,9 @@
-package com.worldcup.worldcup.modules.login.mapper;
+package com.worldcup.modules.login.mapper;
 
 
-import com.worldcup.worldcup.modules.login.dto.credential.CredentialRequest;
-import com.worldcup.worldcup.modules.login.dto.credential.CredentialResponse;
-import com.worldcup.worldcup.modules.login.entity.Credential;
+import com.worldcup.modules.login.dto.credential.CredentialRequest;
+import com.worldcup.modules.login.dto.credential.CredentialResponse;
+import com.worldcup.modules.login.entity.Credential;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 

@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.modules.login.dto.credential;
+package com.worldcup.modules.login.dto.credential;
 
-import com.worldcup.worldcup.modules.login.dto.user.UserResponse;
+import com.worldcup.modules.login.dto.user.UserResponse;
 
 import java.time.LocalDateTime;
 

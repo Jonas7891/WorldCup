@@ -1,6 +1,6 @@
-package com.worldcup.worldcup.shared.controller;
+package com.worldcup.shared.controller;
 
-import com.worldcup.worldcup.shared.service.BaseService;
+import com.worldcup.shared.service.BaseService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

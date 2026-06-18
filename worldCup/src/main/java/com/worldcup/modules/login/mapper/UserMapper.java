@@ -1,8 +1,8 @@
-package com.worldcup.worldcup.modules.login.mapper;
+package com.worldcup.modules.login.mapper;
 
-import com.worldcup.worldcup.modules.login.dto.user.UserRequest;
-import com.worldcup.worldcup.modules.login.dto.user.UserResponse;
-import com.worldcup.worldcup.modules.login.entity.AppUser;
+import com.worldcup.modules.login.dto.user.UserRequest;
+import com.worldcup.modules.login.dto.user.UserResponse;
+import com.worldcup.modules.login.entity.AppUser;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 

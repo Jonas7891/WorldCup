@@ -1,12 +1,12 @@
-package com.worldcup.worldcup.modules.login.service.impl;
+package com.worldcup.modules.login.service.impl;
 
-import com.worldcup.worldcup.modules.login.dto.role.RoleRequest;
-import com.worldcup.worldcup.modules.login.dto.role.RoleResponse;
-import com.worldcup.worldcup.modules.login.entity.Role;
-import com.worldcup.worldcup.modules.login.mapper.RoleMapper;
-import com.worldcup.worldcup.modules.login.repository.RoleRepository;
-import com.worldcup.worldcup.modules.login.service.RoleService;
-import com.worldcup.worldcup.shared.service.BaseServiceImpl;
+import com.worldcup.modules.login.dto.role.RoleRequest;
+import com.worldcup.modules.login.dto.role.RoleResponse;
+import com.worldcup.modules.login.entity.Role;
+import com.worldcup.modules.login.mapper.RoleMapper;
+import com.worldcup.modules.login.repository.RoleRepository;
+import com.worldcup.modules.login.service.RoleService;
+import com.worldcup.shared.service.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
 @Service
