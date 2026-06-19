@@ -12,7 +12,7 @@ public class TeamMapper {
         }
 
         TeamDTO teamDTO = new TeamDTO();
-        teamDTO.setId_team(team.getId_team());
+        teamDTO.setId_team(team.getIdTeam());
         teamDTO.setName(team.getName());
         teamDTO.setId_country(team.getCountry() != null ? team.getCountry().getId_country() : null);
         teamDTO.setId_group(team.getGroups() != null ? team.getGroups().getId_group() : null);
@@ -28,9 +28,9 @@ public class TeamMapper {
 
         Team team = new Team();
         if (teamDTO.getId_team() != null) {
-            team.setId_team(teamDTO.getId_team());
+            team.setIdTeam(teamDTO.getId_team());
         } else {
-            team.setId_team(null);
+            team.setIdTeam(null);
         }
         team.setName(teamDTO.getName());
         team.setStatus(teamDTO.getStatus());

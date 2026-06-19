@@ -9,13 +9,13 @@ import java.util.List;
 
 public interface ParticipatingPartyRepository extends JpaRepository<ParticipatingParty, Integer> {
 
-    @Query("SELECT pp FROM participating_party pp WHERE pp.match.id_match = :matchId")
+    @Query(value = "SELECT * FROM ParticipatingParty pp WHERE pp.match.id_match = :matchId", nativeQuery = true)
     List<ParticipatingParty> findByMatchId(@Param("matchId") Integer matchId);
 
-    @Query("SELECT pp FROM participating_party pp WHERE pp.team.id_team = :teamId")
+    @Query(value = "SELECT * FROM ParticipatingParty pp WHERE pp.team.id_team = :teamId", nativeQuery = true)
     List<ParticipatingParty> findByTeamId(@Param("teamId") Integer teamId);
 
-    @Query("SELECT pp FROM participating_party pp WHERE pp.match.id_match = :matchId AND pp.team.id_team = :teamId")
+    @Query(value = "SELECT * FROM ParticipatingParty pp WHERE pp.match.id_match = :matchId AND pp.team.id_team = :teamId", nativeQuery = true)
     List<ParticipatingParty> findByMatchIdAndTeamId(@Param("matchId") Integer matchId, @Param("teamId") Integer teamId);
 }
 

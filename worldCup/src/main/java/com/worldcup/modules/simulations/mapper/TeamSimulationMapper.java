@@ -12,9 +12,9 @@ public class TeamSimulationMapper {
         }
 
         TeamSimulationDTO teamSimulationDTO = new TeamSimulationDTO();
-        teamSimulationDTO.setId_teamSimulation(teamSimulation.getId_teamSimulation());
+        teamSimulationDTO.setId_teamSimulation(teamSimulation.getIdTeamSimulation());
         teamSimulationDTO.setId_simulation(teamSimulation.getSimulation() != null ? teamSimulation.getSimulation().getId_simulation() : null);
-        teamSimulationDTO.setId_team(teamSimulation.getTeam() != null ? teamSimulation.getTeam().getId_team() : null);
+        teamSimulationDTO.setId_team(teamSimulation.getTeam() != null ? teamSimulation.getTeam().getIdTeam() : null);
         teamSimulationDTO.setStatus(teamSimulation.getStatus());
 
         return teamSimulationDTO;
@@ -26,7 +26,7 @@ public class TeamSimulationMapper {
         }
 
         TeamSimulation teamSimulation = new TeamSimulation();
-        teamSimulation.setId_teamSimulation(teamSimulationDTO.getId_teamSimulation());
+        teamSimulation.setIdTeamSimulation(teamSimulationDTO.getId_teamSimulation());
         teamSimulation.setStatus(teamSimulationDTO.getStatus() != null ? teamSimulationDTO.getStatus() : true);
 
         return teamSimulation;

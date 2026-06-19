@@ -7,26 +7,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name="team_simulation")
-@Table(name="team_simulation")
+@Entity
+@Table(name = "team_simulation")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class TeamSimulation {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id_teamSimulation", nullable = false)
-    private Integer id_teamSimulation;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_teamSimulation", nullable = false)
+    private Integer idTeamSimulation;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="id_simulation", nullable = false)
+    @JoinColumn(name = "id_simulation", nullable = false)
     private Simulation simulation;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="id_team", nullable = false)
+    @JoinColumn(name = "id_team", nullable = false)
     private Team team;
 
-    @Column(name="status", nullable = false)
+    @Column(name = "status", nullable = false)
     private Boolean status;
 }

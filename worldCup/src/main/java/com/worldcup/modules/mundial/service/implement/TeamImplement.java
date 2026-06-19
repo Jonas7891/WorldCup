@@ -35,7 +35,7 @@ public class TeamImplement implements ITeam {
             }
 
             Team team = teamMapper.toEntity(teamDTO);
-            team.setId_team(null);
+            team.setIdTeam(null);
 
             try {
                 teamRepository.save(team);
